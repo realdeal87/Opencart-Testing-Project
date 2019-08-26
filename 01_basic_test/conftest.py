@@ -6,7 +6,7 @@ from selenium.webdriver import ChromeOptions, FirefoxOptions, IeOptions
 
 def pytest_addoption(parser):
     """Функция принимает параметры строки --browser {"Chrome", "Firefox", "IE"} и --base-url
-    (по умолчанию 'localhost') """
+    (по умолчанию 'localhost')"""
     parser.addoption(
         "--browser",
         action="store",
@@ -22,33 +22,39 @@ def pytest_addoption(parser):
         help="URL that you're testing, by default: 'localhost'"
     )
 
+
 @pytest.fixture
-def browser_driver(request):
-    """Фикстура выбирает браузер на основе параметра коммандной строки"""
+def browser(request):
+    """Фикстура возвращает имя браузера"""
+    param = request.config.getoption("--browser")
+    return param
 
-    browser = request.config.getoption("--browser")
-    base_url = request.config.getoption("--base-url")
-    url = "http://" + base_url + "/opencart"
 
+@pytest.fixture
+def base_url(request):
+    """Фикстура возвращает базовый URL"""
+    param = request.config.getoption("--base-url")
+    return param
+
+
+@pytest.fixture
+def browser_driver(request, browser):
+    """Фикстура для запуска браузеров {Chrome, Firefox, IE} в полноэкранном режиме
+    с опцией headless"""
     web = None
     if browser == "Chrome":
         options = ChromeOptions()
         options.add_argument("--start-fullscreen")
         options.add_argument("--headless")
         web = webdriver.Chrome(options=options)
-        web.get(url)
     if browser == "Firefox":
         options = FirefoxOptions()
         options.add_argument("--headless")
         web = webdriver.Firefox(options=options)
-        web.get(url)
-        web.maximize_window()
     if browser == "IE":
         options = IeOptions()
         options.add_argument("-k")
         options.add_argument("--headless")
         web = webdriver.Ie(options=options)
-    print("\nBrowser:", browser, "\nURL:", url)
-
     request.addfinalizer(web.quit)
     return web
