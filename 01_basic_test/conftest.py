@@ -44,7 +44,7 @@ def browser_driver(request, browser):
     web = None
     if browser == "Chrome":
         options = ChromeOptions()
-        options.add_argument("--start-fullscreen")
+        # options.add_argument("--start-fullscreen")
         options.add_argument("--headless")
         web = webdriver.Chrome(options=options)
     if browser == "Firefox":
@@ -53,7 +53,6 @@ def browser_driver(request, browser):
         web = webdriver.Firefox(options=options)
     if browser == "IE":
         options = IeOptions()
-        options.add_argument("-k")
         options.add_argument("--headless")
         web = webdriver.Ie(options=options)
     request.addfinalizer(web.quit)

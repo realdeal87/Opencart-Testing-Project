@@ -6,6 +6,5 @@ def test_opencart_homepage(browser_driver, browser, base_url):
     url = "http://" + base_url + "/opencart"
     print("\nBrowser:", browser, "\nURL:", url)
     browser_driver.get(url)
-    if browser == "Firefox":
-        browser_driver.maximize_window()
+    browser_driver.maximize_window()
     assert browser_driver.title == "Your Store"
