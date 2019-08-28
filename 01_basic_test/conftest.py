@@ -55,5 +55,6 @@ def browser_driver(request, browser):
         options = IeOptions()
         options.add_argument("--headless")
         web = webdriver.Ie(options=options)
+    web.maximize_window()
     request.addfinalizer(web.quit)
     return web
