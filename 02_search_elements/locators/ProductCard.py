@@ -11,6 +11,9 @@ class ProductCard:
 
     input_qty = ("id", "input-quantity")
     button_cart = ("id", "button-cart")
+    dropdown_menu = "//ul[@class='dropdown-menu']/li"
+
+    alert_danger = ("class name", "alert-danger")
 
     class Thumbnails:
         """Локаторы для миниатюр"""

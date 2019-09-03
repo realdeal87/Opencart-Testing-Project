@@ -53,5 +53,5 @@ def browser_driver(request, browser, url):
     web.maximize_window()
     web.implicitly_wait(20)
     web.get(url)
-    request.addfinalizer(web.quit)
+    # request.addfinalizer(web.quit)
     return web

@@ -8,6 +8,7 @@ class MainPage:
         """Локаторы для хедера"""
         logo_link = ("id", "logo")
         button_cart = "//div[@id='cart']/button"
+        cart_count = "//span[@id='cart-total']/text()"
 
     class MenuBar:
         """Локаторы для меню"""
@@ -32,3 +33,4 @@ class MainPage:
         search_button = "//div[@id='search']/span/button"
 
     alert_success = ("class name", "alert-success")
+    alert_danger = ("class name", "alert-danger")

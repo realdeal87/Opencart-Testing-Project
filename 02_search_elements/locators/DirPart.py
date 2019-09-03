@@ -14,3 +14,5 @@ class DirPart:
     button_grid = ("id", "grid-view")
 
     compare = ("id", "compare-total")
+
+    compare_count = "//td/input[@value='Add to Cart']"
