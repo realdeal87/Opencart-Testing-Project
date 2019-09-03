@@ -4,7 +4,8 @@ from locators import DirPart, LoginPanel, MainPage, ProductCard
 
 
 def test_search(browser_driver):
-    """Поиск продуктов Canon, добавление найденного продукта в отслеживаемые, получение успешного алертинга"""
+    """Поиск продуктов Canon, добавление найденного продукта в отслеживаемые,
+    получение успешного алертинга"""
     browser_driver.find_element(*MainPage.Search.search_field).send_keys("Canon")
     browser_driver.find_element_by_xpath(MainPage.Search.search_button).click()
     product_keys = browser_driver.find_elements_by_xpath(MainPage.Promo.button_group)
@@ -37,7 +38,8 @@ def test_card(browser_driver):
 
 
 def test_pictures(browser_driver):
-    """Переход к карточке MacBook, просмотр всех фото, добавление в корзину, открытие dropdown-menu"""
+    """Переход к карточке MacBook, просмотр всех фото, добавление в корзину,
+    открытие dropdown-menu"""
     products = browser_driver.find_elements_by_xpath(MainPage.Promo.image_link)
     products[0].click()
     pictures = browser_driver.find_elements(*ProductCard.Thumbnails.tumbnails)
