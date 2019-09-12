@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 """Локаторы для главной страницы сайта Opencart"""
 
 
@@ -6,18 +7,18 @@ class MainPage:
 
     class Header:
         """Локаторы для хедера"""
-        logo_link = ("id", "logo")
+        logo_link = (By.ID, "logo")
         button_cart = "//div[@id='cart']/button"
         cart_count = "//span[@id='cart-total']/text()"
 
     class MenuBar:
         """Локаторы для меню"""
-        menu_element = ("class name", "dropdown")
+        menu_element = (By.CLASS_NAME, "dropdown")
         see_all = "Show All"
 
     class Promo:
         """Локаторы для промоблока"""
-        product_thumb = ("class name", "product-thumb")
+        product_thumb = (By.CLASS_NAME, "product-thumb")
         image_link = "//div[@class='image']/a"
         product_link = "//div[@class='caption']/h4/a"
         button_group = "//div[@class='button-group']/button"
@@ -29,8 +30,5 @@ class MainPage:
 
     class Search:
         """Локаторы для поисковой строки"""
-        search_field = ("name", "search")
+        search_field = (By.NAME, "search")
         search_button = "//div[@id='search']/span/button"
-
-    alert_success = ("class name", "alert-success")
-    alert_danger = ("class name", "alert-danger")

@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 """Локаторы для карточки товара сайта Opencart"""
 
 
@@ -9,17 +10,17 @@ class ProductCard:
 
     brand_link = "//ul[@class='list-unstyled']/li/a"
 
-    input_qty = ("id", "input-quantity")
-    button_cart = ("id", "button-cart")
+    input_qty = (By.ID, "input-quantity")
+    button_cart = (By.ID, "button-cart")
     dropdown_menu = "//ul[@class='dropdown-menu']/li"
 
-    alert_danger = ("class name", "alert-danger")
+    alert_danger = (By.CLASS_NAME, "alert-danger")
 
     class Thumbnails:
         """Локаторы для миниатюр"""
 
-        tumbnails = ("class name", "thumbnail")
+        tumbnails = (By.CLASS_NAME, "thumbnail")
         button_esc = "//button[@title='Close (Esc)']"
-        picture = ("class name", "mfp-img")
+        picture = (By.CLASS_NAME, "mfp-img")
         arrow_left = "//button[@title='Previous (Left arrow key)']"
         arrow_right = "//button[@title='Next (Right arrow key)']"

@@ -1,6 +1,6 @@
 """Тестовые сценарии для проверки функционала сайта Opencart"""
 import time
-from locators import DirPart, LoginPanel, MainPage, ProductCard
+from locators import Alerts, DirPart, LoginPanel, MainPage, ProductCard
 
 
 def test_search(browser_driver):
@@ -10,7 +10,7 @@ def test_search(browser_driver):
     browser_driver.find_element_by_xpath(MainPage.Search.search_button).click()
     product_keys = browser_driver.find_elements_by_xpath(MainPage.Promo.button_group)
     product_keys[1].click()
-    browser_driver.find_element(*MainPage.alert_success)
+    browser_driver.find_element(*Alerts.alert_success)
 
 
 def test_catalog(browser_driver):
@@ -34,7 +34,7 @@ def test_card(browser_driver):
     browser_driver.find_element(*ProductCard.input_qty).clear()
     browser_driver.find_element(*ProductCard.input_qty).send_keys("BreakIt")
     browser_driver.find_element(*ProductCard.button_cart).click()
-    browser_driver.find_element(*ProductCard.alert_danger)
+    browser_driver.find_element(*Alerts.alert_danger)
 
 
 def test_pictures(browser_driver):
@@ -58,6 +58,6 @@ def test_admin_panel(browser_driver, url):
     browser_driver.find_element(*LoginPanel.LoginDetails.input_username).send_keys("xxx")
     browser_driver.find_element(*LoginPanel.LoginDetails.input_password).send_keys("xxx")
     browser_driver.find_element_by_xpath(LoginPanel.LoginDetails.login_button).submit()
-    browser_driver.find_element(*LoginPanel.LoginDetails.alert_danger)
+    browser_driver.find_element(*Alerts.alert_danger)
     # # Проверка с валидными данными:
     # browser_driver.find_element(*LoginPanel.Dashboard.dashboard_nav)
