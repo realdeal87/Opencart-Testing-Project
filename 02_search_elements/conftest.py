@@ -1,8 +1,11 @@
 """Модуль предустановок для тестирования сайта Opencart"""
 import pytest
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver import ChromeOptions, FirefoxOptions, IeOptions
-from locators import LoginPanel
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from locators import DashBoard, LoginPanel
 
 
 def pytest_addoption(parser):
@@ -20,9 +23,17 @@ def pytest_addoption(parser):
         "--base-url",
         action="store",
         default="localhost/opencart",
-        help="URL that you're testing, by default: 'localhost/opencart'"
+        help="URL that you're testing, by default: 'localhost/opencart'",
+        required=False
     )
 
+    parser.addoption(
+        "--waiting",
+        action="store",
+        help="Time which browser will wait elements",
+        default=20,
+        required=False
+    )
 
 @pytest.fixture
 def browser(request):
@@ -68,6 +79,23 @@ def sign_in(browser_driver, url):
     browser_driver.find_element(*LoginPanel.LoginDetails.input_username).send_keys("realdeal87")
     browser_driver.find_element(*LoginPanel.LoginDetails.input_password).send_keys("K1x9Z5b8!")
     browser_driver.find_element_by_xpath(LoginPanel.LoginDetails.login_button).submit()
-    browser_driver.find_element_by_link_text("Catalog").click()
-    browser_driver.find_element_by_link_text("Products").click()
+
+    # Добавлена обработка исключения при поиске элементов "Catalog" и "Products".
+    # При запуске тестов с параметром --waiting=0 неявное ожидание равно 0.
+    # Если при этом установить оба или одно из явных ожиданий равными 0,
+    # может сработать исключение NoSuchElementException.
+    try:
+        locator = DashBoard.catalog_link
+        element = WebDriverWait(browser_driver, 20).until(EC.presence_of_element_located(locator))
+        element.click()
+        locator = DashBoard.products_link
+        element = WebDriverWait(browser_driver, 20).until(EC.presence_of_element_located(locator))
+        element.click()
+    except NoSuchElementException:
+        print("\nError in setup! No such element on page")
+    except TimeoutException:
+        print("\nError in setup! Timeout exception")
+    else:
+        print("\nYou get no errors in setup! Begin testing...")
+
     return browser_driver

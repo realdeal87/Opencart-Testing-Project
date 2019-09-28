@@ -7,8 +7,8 @@ class DashBoard:
 
     dashboard_nav = (By.ID, "navigation")
 
-    catalog_link = "Catalog"
-    products_link = "Products"
+    catalog_link = (By.LINK_TEXT, "Catalog")
+    products_link = (By.LINK_TEXT, "Products")
 
     class Products:
         """Локаторы для меню"""
@@ -23,6 +23,7 @@ class DashBoard:
             general_link = "General"
             product_name = (By.ID, "input-name1")
             description_area = (By.CLASS_NAME, "note-editable")
+            description_area_edited = (By.CSS_SELECTOR, ".note-editable > p:nth-child(1)")
             meta_teg_title = (By.ID, "input-meta-title1")
 
             data_link = "Data"
