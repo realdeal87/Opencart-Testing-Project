@@ -1,0 +1,137 @@
+1569770801832	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.NzH0VSHdyfXe"
+*** You are running in headless mode.
+1569770806458	Marionette	INFO	Listening on port 42625
+1569770806565	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 4606, Chrome_ChildThread] WARNING: pipe error (3): Соединение разорвано другой стороной: file /build/firefox-esr-1sNYZF/firefox-esr-60.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 342
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1569770814111	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.KGSInVmXQEBg"
+*** You are running in headless mode.
+1569770817850	Marionette	INFO	Listening on port 34281
+1569770817942	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 4755, Chrome_ChildThread] WARNING: pipe error (18): Соединение разорвано другой стороной: file /build/firefox-esr-1sNYZF/firefox-esr-60.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 342
+[Child 4755, Chrome_ChildThread] WARNING: pipe error (3): Соединение разорвано другой стороной: file /build/firefox-esr-1sNYZF/firefox-esr-60.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 342
+1569770852447	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.CTXL3zl8wDIZ"
+
+(firefox-esr:4857): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:4857): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569770856632	Marionette	INFO	Listening on port 36261
+1569770856673	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1569770860366	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.FMUAVvGAccrr"
+
+(firefox-esr:5018): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:5018): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569770864459	Marionette	INFO	Listening on port 38045
+1569770864490	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1569770867800	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.DMskOCtfhMA4"
+
+(firefox-esr:5167): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:5167): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569770871836	Marionette	INFO	Listening on port 39711
+1569770871934	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1569772046156	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.AREPQPPxZAFJ"
+
+(firefox-esr:7826): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:7826): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772050231	Marionette	INFO	Listening on port 41507
+1569772050289	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772052090	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.HvrCbnbkixgt"
+
+(firefox-esr:7964): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:7964): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772056695	Marionette	INFO	Listening on port 35791
+1569772056714	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772059048	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.HYEdwq7Nt3OG"
+
+(firefox-esr:8112): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:8112): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772063845	Marionette	INFO	Listening on port 41277
+1569772063913	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1569772118881	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.BU1h2jaubEtF"
+
+(firefox-esr:8291): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:8291): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772123161	Marionette	INFO	Listening on port 35371
+1569772123202	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772126780	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.0SAXwaAeoYDU"
+
+(firefox-esr:8436): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:8436): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772131196	Marionette	INFO	Listening on port 46859
+1569772131309	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772134467	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.I4fig7FKham1"
+
+(firefox-esr:8586): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:8586): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772138856	Marionette	INFO	Listening on port 46647
+1569772138894	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1569772198771	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Abofz6j2NGYW"
+
+(firefox-esr:8759): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:8759): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772203011	Marionette	INFO	Listening on port 46349
+1569772203088	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772213697	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.H3rHB1aitOxU"
+
+(firefox-esr:8908): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:8908): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772218190	Marionette	INFO	Listening on port 42329
+1569772218221	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772221496	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Bd3Nb5z11frZ"
+
+(firefox-esr:9049): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:9049): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772225840	Marionette	INFO	Listening on port 44983
+1569772225936	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1569772305028	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ttedkYnQGXTA"
+
+(firefox-esr:9226): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:9226): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772309291	Marionette	INFO	Listening on port 43289
+1569772309347	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772316326	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.2gDruzqIwgqM"
+
+(firefox-esr:9373): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:9373): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772320716	Marionette	INFO	Listening on port 43917
+1569772320781	Marionette	WARN	TLS certificate errors will be ignored for this session
+1569772334756	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ZQ0mlqNzAg5b"
+
+(firefox-esr:9517): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:9517): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+1569772338816	Marionette	INFO	Listening on port 37421
+1569772338887	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+[Parent 9517, Gecko_IOThread] WARNING: pipe error: Обрыв канала: file /build/firefox-esr-1sNYZF/firefox-esr-60.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 694
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping

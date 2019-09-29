@@ -1,7 +1,6 @@
 """Модуль предустановок для тестирования сайта Opencart"""
 import pytest
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver import ChromeOptions, FirefoxOptions, IeOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -45,50 +44,38 @@ def browser_driver(request):
 
     if browser == "Chrome":
         options = ChromeOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         web = webdriver.Chrome(options=options)
     elif browser == "Firefox":
         options = FirefoxOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         web = webdriver.Firefox(options=options)
-    elif browser == "IE":
-        options = IeOptions()
-        options.add_argument("--headless")
-        web = webdriver.Ie(options=options)
     else:
-        raise Exception(f"{request.param} is not supported!")
+        raise Exception(f"{browser} is not supported!")
 
     web.maximize_window()
     web.implicitly_wait(waiting)
     web.get(url)
-    request.addfinalizer(web.quit)
+    # request.addfinalizer(web.quit)
     return web
 
 
 @pytest.fixture
-def sign_in(browser_driver, url):
+def sign_in(request, browser_driver):
     """Фикстура для авторизации в Opencart и перехода в каталог продуктов"""
-    browser_driver.get(url + "/admin")
+    browser_driver.get("http://" + request.config.getoption("--base-url") + "/admin")
     browser_driver.find_element(*LoginPanel.LoginDetails.input_username).send_keys("realdeal87")
     browser_driver.find_element(*LoginPanel.LoginDetails.input_password).send_keys("K1x9Z5b8!")
     browser_driver.find_element_by_xpath(LoginPanel.LoginDetails.login_button).submit()
-
-    # Добавлена обработка исключения при поиске элементов "Catalog" и "Products".
-    # При запуске тестов с параметром --waiting=0 неявное ожидание равно 0.
-    # Если при этом установить оба или одно из явных ожиданий равными 0,
-    # может сработать исключение NoSuchElementException.
-    try:
-        locator = DashBoard.catalog_link
-        element = WebDriverWait(browser_driver, 20).until(EC.presence_of_element_located(locator))
-        element.click()
-        locator = DashBoard.products_link
-        element = WebDriverWait(browser_driver, 20).until(EC.presence_of_element_located(locator))
-        element.click()
-    except NoSuchElementException:
-        print("\nError in setup! No such element on page")
-    except TimeoutException:
-        print("\nError in setup! Timeout exception")
-    else:
-        print("\nYou get no errors in setup! Begin testing...")
-
     return browser_driver
+
+
+@pytest.fixture
+def go_to_products(sign_in):
+    locator = DashBoard.catalog_link
+    element = WebDriverWait(sign_in, 20).until(EC.presence_of_element_located(locator))
+    element.click()
+    locator = DashBoard.products_link
+    element = WebDriverWait(sign_in, 20).until(EC.presence_of_element_located(locator))
+    element.click()
+    return sign_in
