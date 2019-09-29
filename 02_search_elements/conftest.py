@@ -45,11 +45,11 @@ def browser_driver(request):
 
     if browser == "Chrome":
         options = ChromeOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         web = webdriver.Chrome(options=options)
     elif browser == "Firefox":
         options = FirefoxOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         web = webdriver.Firefox(options=options)
     else:
         raise Exception(f"{browser} is not supported!")
@@ -82,6 +82,6 @@ def go_prod(sign_in):
         element = WebDriverWait(sign_in, 20).until(EC.presence_of_element_located(locator))
         element.click()
     except TimeoutException:
-        print("\nTimeout exception! Check explicits!")
+        print("\nTimeout exception! Checkout explicits!")
         raise
     return sign_in
