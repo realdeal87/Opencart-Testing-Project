@@ -35,38 +35,31 @@ def pytest_addoption(parser):
         required=False
     )
 
-@pytest.fixture
-def browser(request):
-    """Фикстура возвращает имя браузера"""
-    param = request.config.getoption("--browser")
-    return param
-
 
 @pytest.fixture
-def url(request):
-    """Фикстура возвращает URL Opencart"""
-    param = "http://" + request.config.getoption("--base-url")
-    return param
-
-
-@pytest.fixture
-def browser_driver(request, browser, url):
+def browser_driver(request):
     """Фикстура для запуска браузеров {Chrome, Firefox, IE} в полноэкранном режиме"""
-    web = None
+    browser = request.config.getoption("--browser")
+    url = "http://" + request.config.getoption("--base-url")
+    waiting = request.config.getoption("--waiting")
+
     if browser == "Chrome":
         options = ChromeOptions()
         options.add_argument("--headless")
         web = webdriver.Chrome(options=options)
-    if browser == "Firefox":
+    elif browser == "Firefox":
         options = FirefoxOptions()
         options.add_argument("--headless")
         web = webdriver.Firefox(options=options)
-    if browser == "IE":
+    elif browser == "IE":
         options = IeOptions()
         options.add_argument("--headless")
         web = webdriver.Ie(options=options)
+    else:
+        raise Exception(f"{request.param} is not supported!")
+
     web.maximize_window()
-    web.implicitly_wait(20)
+    web.implicitly_wait(waiting)
     web.get(url)
     request.addfinalizer(web.quit)
     return web
