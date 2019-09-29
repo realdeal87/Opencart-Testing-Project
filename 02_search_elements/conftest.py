@@ -1,7 +1,8 @@
 """Модуль предустановок для тестирования сайта Opencart"""
 import pytest
 from selenium import webdriver
-from selenium.webdriver import ChromeOptions, FirefoxOptions, IeOptions
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver import ChromeOptions, FirefoxOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import DashBoard, LoginPanel
@@ -44,11 +45,11 @@ def browser_driver(request):
 
     if browser == "Chrome":
         options = ChromeOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         web = webdriver.Chrome(options=options)
     elif browser == "Firefox":
         options = FirefoxOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         web = webdriver.Firefox(options=options)
     else:
         raise Exception(f"{browser} is not supported!")
@@ -56,13 +57,13 @@ def browser_driver(request):
     web.maximize_window()
     web.implicitly_wait(waiting)
     web.get(url)
-    # request.addfinalizer(web.quit)
+    request.addfinalizer(web.quit)
     return web
 
 
 @pytest.fixture
 def sign_in(request, browser_driver):
-    """Фикстура для авторизации в Opencart и перехода в каталог продуктов"""
+    """Фикстура для авторизации в Opencart"""
     browser_driver.get("http://" + request.config.getoption("--base-url") + "/admin")
     browser_driver.find_element(*LoginPanel.LoginDetails.input_username).send_keys("realdeal87")
     browser_driver.find_element(*LoginPanel.LoginDetails.input_password).send_keys("K1x9Z5b8!")
@@ -71,11 +72,16 @@ def sign_in(request, browser_driver):
 
 
 @pytest.fixture
-def go_to_products(sign_in):
-    locator = DashBoard.catalog_link
-    element = WebDriverWait(sign_in, 20).until(EC.presence_of_element_located(locator))
-    element.click()
-    locator = DashBoard.products_link
-    element = WebDriverWait(sign_in, 20).until(EC.presence_of_element_located(locator))
-    element.click()
+def go_prod(sign_in):
+    """Фикстура для перехода в каталог продуктов"""
+    try:
+        locator = DashBoard.catalog_link
+        element = WebDriverWait(sign_in, 20).until(EC.presence_of_element_located(locator))
+        element.click()
+        locator = DashBoard.products_link
+        element = WebDriverWait(sign_in, 20).until(EC.presence_of_element_located(locator))
+        element.click()
+    except TimeoutException:
+        print("\nTimeout exception! Check explicits!")
+        raise
     return sign_in

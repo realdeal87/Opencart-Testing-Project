@@ -20,26 +20,30 @@ def search_product(table, name, edit=None):
 
 def checkout_alert(browser_driver):
     """Функция ожидает появления элемента alert_success"""
-    locator = Alerts.alert_success
-    WebDriverWait(browser_driver, 5).until(EC.presence_of_element_located(locator))
+    try:
+        locator = Alerts.alert_success
+        WebDriverWait(browser_driver, 5).until(EC.presence_of_element_located(locator))
+    except TimeoutException:
+        print("\nNo alert_success on page!")
+        raise
 
 
-def test_create_product(go_to_products):
+def test_create_product(go_prod):
     """Успешное добавление продукта с заполнением минимального количества атрибутов"""
     p_name = "Alcatel OT-890"
     p_meta_teg_title = "Android 2.1"
     p_model = "Product 2011"
 
-    go_to_products.find_element_by_xpath(DashBoard.Products.add_new_button).click()
-    go_to_products.find_element(*DashBoard.Products.ProductEdit.product_name).send_keys(p_name)
-    go_to_products.find_element(*DashBoard.Products.ProductEdit.meta_teg_title).send_keys(p_meta_teg_title)
-    go_to_products.find_element_by_link_text(DashBoard.Products.ProductEdit.data_link).click()
-    go_to_products.find_element(*DashBoard.Products.ProductEdit.model).send_keys(p_model)
-    go_to_products.find_element_by_xpath(DashBoard.Products.ProductEdit.save_button).click()
-    checkout_alert(go_to_products)
+    go_prod.find_element_by_xpath(DashBoard.Products.add_new_button).click()
+    go_prod.find_element(*DashBoard.Products.ProductEdit.product_name).send_keys(p_name)
+    go_prod.find_element(*DashBoard.Products.ProductEdit.meta_teg_title).send_keys(p_meta_teg_title)
+    go_prod.find_element_by_link_text(DashBoard.Products.ProductEdit.data_link).click()
+    go_prod.find_element(*DashBoard.Products.ProductEdit.model).send_keys(p_model)
+    go_prod.find_element_by_xpath(DashBoard.Products.ProductEdit.save_button).click()
+    checkout_alert(go_prod)
 
 
-def test_edit_product(go_to_products):
+def test_edit_product(go_prod):
     """Успешное редактирование первого найденного продукта по заданному названию,
     с добавлением описания продукта"""
     p_name = "Alcatel OT-890"
@@ -51,28 +55,25 @@ def test_edit_product(go_to_products):
                     "The screen covers about 38.1% of the device's body. " \
                     "This is an average result."
 
-    p_table = go_to_products.find_elements_by_xpath(DashBoard.Products.trows)
+    p_table = go_prod.find_elements_by_xpath(DashBoard.Products.trows)
     search_product(p_table, p_name, "edit")
-    go_to_products.find_element(*DashBoard.Products.ProductEdit.description_area).click()
-    go_to_products.find_element(*DashBoard.Products.ProductEdit.description_area).send_keys(p_description)
-
-    # Раньше здесь стоял time.sleep, иногда драйвер проскакивал ввод
-    # Теперь проверяется наличие текста p_description в поле ввода
+    go_prod.find_element(*DashBoard.Products.ProductEdit.description_area).click()
+    go_prod.find_element(*DashBoard.Products.ProductEdit.description_area).send_keys(p_description)
     try:
         locator = DashBoard.Products.ProductEdit.description_area_edited
-        WebDriverWait(go_to_products, 5).until(EC.text_to_be_present_in_element(locator, "Проверка"))
+        WebDriverWait(go_prod, 5).until(EC.text_to_be_present_in_element(locator, p_description))
     except TimeoutException:
-        print("WARN No input text in text area!")
-    go_to_products.find_element_by_xpath(DashBoard.Products.ProductEdit.save_button).click()
-    checkout_alert(go_to_products)
+        print("\nWARN No input text in text area!")
+    go_prod.find_element_by_xpath(DashBoard.Products.ProductEdit.save_button).click()
+    checkout_alert(go_prod)
 
 
-def test_delete_product(go_to_products):
+def test_delete_product(go_prod):
     """Успешное удаление первого найденного продукта по заданному названию"""
     p_name = "Alcatel OT-890"
 
-    p_table = go_to_products.find_elements_by_xpath(DashBoard.Products.trows)
+    p_table = go_prod.find_elements_by_xpath(DashBoard.Products.trows)
     search_product(p_table, p_name)
-    go_to_products.find_element_by_xpath(DashBoard.Products.delete_button).click()
-    Alert(go_to_products).accept()
-    checkout_alert(go_to_products)
+    go_prod.find_element_by_xpath(DashBoard.Products.delete_button).click()
+    Alert(go_prod).accept()
+    checkout_alert(go_prod)
