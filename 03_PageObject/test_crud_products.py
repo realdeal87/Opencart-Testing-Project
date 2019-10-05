@@ -1,5 +1,5 @@
 """Тестовые сценарии для проверки основных операций с продуктами в каталоге Opencart"""
-from pageobjects import AdminPage, BasePage, DashBoard, MainPage
+from pageobjects import AdminPage, NavigationBar, ProductsPage
 
 
 def test_create_product(driver, url):
@@ -9,9 +9,9 @@ def test_create_product(driver, url):
     p_meta_teg_title = "Android 2.1"
     p_model = "Product 2011"
 
-    AdminPage(driver).open(url).login(login="Realdeal87", password="K1x9Z5b8!")
-    DashBoard.Navigation(driver).catalog().products()
-    DashBoard.Products(driver) \
+    AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
+    NavigationBar(driver).catalog().products()
+    ProductsPage(driver) \
         .create_product() \
         .fill_required_fields(p_name, p_meta_teg_title, p_model) \
         .save_changes()
@@ -29,10 +29,10 @@ def test_edit_product(driver, url):
                     "The screen covers about 38.1% of the device's body. " \
                     "This is an average result."
 
-    AdminPage(driver).open(url).login(login="Realdeal87", password="K1x9Z5b8!")
-    DashBoard.Navigation(driver).catalog().products()
-    DashBoard.Products(driver) \
-        .edit_product(number=1) \
+    AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
+    NavigationBar(driver).catalog().products()
+    ProductsPage(driver) \
+        .edit_product(number=3) \
         .fill_description(p_description) \
         .save_changes()
 
@@ -40,8 +40,9 @@ def test_edit_product(driver, url):
 def test_delete_products(driver, url):
     """Успешное удаление продуктов по заданному порядковому номеру и количеству"""
 
-    AdminPage(driver).open(url).login(login="Realdeal87", password="K1x9Z5b8!")
-    DashBoard.Navigation(driver).catalog().products()
-    DashBoard.Products(driver) \
-        .choose_products(number=3, quantity=3) \
-        .delete_products()
+    AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
+    NavigationBar(driver).catalog().products()
+    ProductsPage(driver) \
+        .choose_products(number=1, quantity=3) \
+        .delete_products() \
+        .accept()

@@ -1,4 +1,5 @@
 from .AdminPage import AdminPage
 from .BasePage import BasePage
-from .DashBoard import DashBoard
+from .NavigationBar import NavigationBar
 from .MainPage import MainPage
+from .ProductsPage import ProductsPage
