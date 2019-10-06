@@ -9,7 +9,7 @@ class ProductsPage(BasePage):
         return self
 
     def edit_product(self, number):
-        self._click(Products.edit_buttons, number)
+        self._click(Products.edit_buttons, number - 1)
         return self
 
     def save_changes(self):
@@ -27,10 +27,10 @@ class ProductsPage(BasePage):
             if quantity:
                 i = 0
                 while i < quantity:
-                    self._click(Products.checkbox, number + i)
+                    self._click(Products.checkbox, number - 1 + i)
                     i += 1
             else:
-                self._click(Products.checkbox, number)
+                self._click(Products.checkbox, number - 1)
         return self
 
     def copy_products(self):
@@ -42,10 +42,10 @@ class ProductsPage(BasePage):
         return self
 
     def accept(self):
-        self._alert_accept()
+        self.alert.alert_accept()
 
     def dismiss(self):
-        self._alert_dismiss()
+        self.alert.alert_dismiss()
 
     def fill_required_fields(self, name, meta_teg_title, model):
         self._wait_for_visible(Products.ProductEdit.general_link)

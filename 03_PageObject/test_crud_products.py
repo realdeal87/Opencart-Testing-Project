@@ -1,5 +1,5 @@
 """Тестовые сценарии для проверки основных операций с продуктами в каталоге Opencart"""
-from pageobjects import AdminPage, NavigationBar, ProductsPage
+from pageobjects import AdminPage, AlertMSG, NavigationBar, ProductsPage
 
 
 def test_create_product(driver, url):
@@ -15,6 +15,7 @@ def test_create_product(driver, url):
         .create_product() \
         .fill_required_fields(p_name, p_meta_teg_title, p_model) \
         .save_changes()
+    AlertMSG(driver).check_alert_success()
 
 
 def test_edit_product(driver, url):
@@ -32,9 +33,10 @@ def test_edit_product(driver, url):
     AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
     NavigationBar(driver).catalog().products()
     ProductsPage(driver) \
-        .edit_product(number=3) \
+        .edit_product(number=2) \
         .fill_description(p_description) \
         .save_changes()
+    AlertMSG(driver).check_alert_success()
 
 
 def test_delete_products(driver, url):
@@ -43,6 +45,7 @@ def test_delete_products(driver, url):
     AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
     NavigationBar(driver).catalog().products()
     ProductsPage(driver) \
-        .choose_products(number=1, quantity=3) \
+        .choose_products(number=1, quantity=4) \
         .delete_products() \
         .accept()
+    AlertMSG(driver).check_alert_success()

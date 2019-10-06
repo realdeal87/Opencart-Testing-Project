@@ -1,69 +1,44 @@
-from selenium.webdriver.common.by import By
+from locators import DirPart, Main, ProductCard
+from .BasePage import BasePage
 
 
-class MainPage:
+class MainPage(BasePage):
 
-    def __init__(self, driver):
-        self.driver = driver
-        self.title = self.driver.title
-
-    def open(self, url):
-        self.driver.get(url)
+    def open(self):
+        self._open()
         return self
 
+    def title(self):
+        return self._get_title()
+
     def add_to_cart(self, quantity):
-        self.driver.find_element(By.ID, "input-quantity").clear()
-        self.driver.find_element(By.ID, "input-quantity").send_keys(quantity)
-        self.driver.find_element(By.ID, "button-cart").click()
+        self._input(ProductCard.input_qty, quantity)
+        self._click(ProductCard.button_cart)
         return self
 
     def add_to_wishlist(self, number):
-        self.driver.find_element(By.CSS_SELECTOR, f"div.product-layout:nth-child({number}) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > button:nth-child(2)").click()
+        self._click(ProductCard.like_it_button, number - 1)
         return self
 
-    def compare_elements(self, number1, number2):
-        self.driver.find_element(By.CSS_SELECTOR, f"div.product-layout:nth-child({number1}) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > button:nth-child(3)").click()
-        self.driver.find_element(By.CSS_SELECTOR, f"div.product-layout:nth-child({number2}) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > button:nth-child(3)").click()
-        self.driver.find_element(By.PARTIAL_LINK_TEXT, "Product Compare").click()
+    def add_to_compare(self, number):
+        self._click(ProductCard.compare_button, number - 1)
         return self
 
-    def list_images(self):
-        pictures = self.driver.find_elements(By.CLASS_NAME, "thumbnail")
-        pictures[0].click()
-        for _ in pictures:
-            self.driver.find_element(By.CSS_SELECTOR, "button.mfp-arrow:nth-child(4)").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".mfp-close").click()
+    def list_images(self, quantity):
+        self._click(ProductCard.Thumbnails.thumbnails)
+        i = 0
+        while i < quantity:
+            self._click(ProductCard.Thumbnails.arrow_right)
+            i += 1
+        self._click(ProductCard.Thumbnails.button_esc)
         return self
 
-    class Header:
+    def search_element(self, product):
+        self._input(Main.Search.search_field, product)
+        self._click(Main.Search.search_button)
+        return self
 
-        def __init__(self, driver):
-            self.driver = driver
-
-        def search_element(self, product):
-            self.driver.find_element(By.NAME, "search").clear()
-            self.driver.find_element(By.NAME, "search").send_keys(product)
-            self.driver.find_element(By.CSS_SELECTOR, ".btn-default").click()
-            return self
-
-    class MenuBar:
-
-        def __init__(self, driver):
-            self.driver = driver
-
-        def components(self):
-            self.driver.find_element(By.LINK_TEXT, "Components").click()
-            return self
-
-        def monitors(self):
-            self.driver.find_element(By.PARTIAL_LINK_TEXT, "Monitors").click()
-            return self
-
-    class Featured:
-
-        def __init__(self, driver):
-            self.driver = driver
-
-        def choose_product(self, product):
-            self.driver.find_element(By.LINK_TEXT, product).click()
-            return self
+    def choose_product(self, product):
+        product = {'link': product}
+        self._click(product)
+        return self

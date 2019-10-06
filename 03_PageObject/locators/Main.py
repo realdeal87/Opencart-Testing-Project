@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 """Локаторы для главной страницы сайта Opencart"""
 
 
-class MainPage:
+class Main:
     """Локаторы для главной страницы"""
 
     class Header:
@@ -30,5 +30,5 @@ class MainPage:
 
     class Search:
         """Локаторы для поисковой строки"""
-        search_field = (By.NAME, "search")
-        search_button = "//div[@id='search']/span/button"
+        search_field = {'name': 'search'}
+        search_button = {'css': '.btn-default'}
