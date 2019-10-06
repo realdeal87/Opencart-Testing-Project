@@ -45,7 +45,7 @@ def test_delete_products(driver, url):
     AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
     NavigationBar(driver).catalog().products()
     ProductsPage(driver) \
-        .choose_products(number=1, quantity=4) \
+        .choose_products(number=1, quantity=1) \
         .delete_products() \
         .accept()
     AlertMSG(driver).check_alert_success()

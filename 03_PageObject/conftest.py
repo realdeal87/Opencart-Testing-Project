@@ -46,16 +46,16 @@ def driver(request):
 
     if browser == "Chrome":
         options = ChromeOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         web = webdriver.Chrome(options=options)
     elif browser == "Firefox":
         options = FirefoxOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         web = webdriver.Firefox(options=options)
     else:
         raise Exception(f"{browser} is not supported!")
 
     web.maximize_window()
     web.implicitly_wait(waiting)
-    # request.addfinalizer(web.quit)
+    request.addfinalizer(web.quit)
     return web
