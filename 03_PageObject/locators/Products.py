@@ -1,15 +1,18 @@
+"""Локаторы для раздела каталога Products панели администратора сайта Opencart"""
+
+
 class Products:
-    """Локаторы для страницы продуктов"""
+    """Локаторы для раздела каталога Products"""
+
     add_new_button = {'css': 'a.btn:nth-child(2)'}
     copy_button = {'css': 'button.btn:nth-child(3)'}
     delete_button = {'css': 'button.btn:nth-child(4)'}
 
-    checkbox_all = {'css': '.table > thead:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > input:nth-child(1)'}
+    checkbox_all = {'css': '.table > thead:nth-child(1) > tr:nth-child(1)'
+                           ' > td:nth-child(1) > input:nth-child(1)'}
+
     checkbox = {'name': 'selected[]'}
     edit_buttons = {'xpath': '//a[@data-original-title="Edit"]'}
-
-    # checkbox = {'f-css': '.table > tbody:nth-child(2) > tr:nth-child({}) > td:nth-child(1) > input:nth-child(1)'}
-    # edit_buttons = {'f-css': '.table > tbody:nth-child(2) > tr:nth-child({}) > td:nth-child(8) > a:nth-child(1)'}
 
     trows = {'xpath': '//tbody/tr'}
 

@@ -1,3 +1,4 @@
+"""Модуль загружает описание функциональности страниц из пакета pageobjects"""
 from .AdminPage import AdminPage
 from .AlertMSG import AlertMSG
 from .BasePage import BasePage

@@ -1,5 +1,5 @@
 """Тестовые сценарии для проверки функционала сайта Opencart"""
-from pageobjects import AdminPage, AlertMSG, BasePage, MainPage, MenuBar
+from pageobjects import AdminPage, AlertMSG, MainPage, MenuBar
 
 
 def test_search(driver, url):

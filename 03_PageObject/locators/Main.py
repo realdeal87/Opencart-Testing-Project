@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 """Локаторы для главной страницы сайта Opencart"""
 
 
@@ -7,26 +6,26 @@ class Main:
 
     class Header:
         """Локаторы для хедера"""
-        logo_link = (By.ID, "logo")
-        button_cart = "//div[@id='cart']/button"
-        cart_count = "//span[@id='cart-total']/text()"
+        logo_link = {'id': 'logo'}
+        button_cart = {'xpath': '//div[@id="cart"]/button'}
+        cart_count = {'xpath': '//span[@id="cart-total"]/text()'}
 
     class MenuBar:
         """Локаторы для меню"""
-        menu_element = (By.CLASS_NAME, "dropdown")
-        see_all = "Show All"
+        menu_element = {'class': 'dropdown'}
+        see_all = {'link': 'Show All'}
 
     class Promo:
         """Локаторы для промоблока"""
-        product_thumb = (By.CLASS_NAME, "product-thumb")
-        image_link = "//div[@class='image']/a"
-        product_link = "//div[@class='caption']/h4/a"
-        button_group = "//div[@class='button-group']/button"
+        product_thumb = {'class': 'product-thumb'}
+        image_link = {'xpath': '//div[@class="image"]/a'}
+        product_link = {'xpath': '//div[@class="caption"]/h4/a'}
+        button_group = {'xpath': '//div[@class="button-group"]/button'}
 
     class Footer:
         """Локаторы для футера"""
-        link_site_map = "Site Map"
-        link_monitors = "Monitors"
+        link_site_map = {'link': 'Site Map'}
+        link_monitors = {'link': 'Monitors'}
 
     class Search:
         """Локаторы для поисковой строки"""

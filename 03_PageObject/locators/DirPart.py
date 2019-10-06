@@ -1,19 +1,18 @@
-from selenium.webdriver.common.by import By
 """Локаторы для раздела каталога сайта Opencart"""
 
 
 class DirPart:
     """Локаторы для раздела каталога"""
 
-    breadcrumbs = (By.CLASS_NAME, "breadcrumb")
+    breadcrumbs = {'class': 'breadcrumb'}
 
-    sidebar_items = (By.CLASS_NAME, "list-group")
+    sidebar_items = {'class': 'list-group'}
 
-    refine_search = "//div[@class='col-sm-3']/ul/li"
+    refine_search = {'xpath': '//div[@class="col-sm-3"]/ul/li'}
 
-    button_list = (By.ID, "list-view")
-    button_grid = (By.ID, "grid-view")
+    button_list = {'id': 'list-view'}
+    button_grid = {'id': 'grid-view'}
 
-    compare = (By.ID, "compare-total")
+    compare = {'id': 'compare-total'}
 
-    compare_count = "//td/input[@value='Add to Cart']"
+    compare_count = {'xpath': '//td/input[@value="Add to Cart"]'}
