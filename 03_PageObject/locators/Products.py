@@ -16,6 +16,12 @@ class Products:
 
     trows = {'xpath': '//tbody/tr'}
 
+    input_name = {'id': 'input-name'}
+    input_model = {'id': 'input-model'}
+    input_price = {'id': 'input-price'}
+    input_quantity = {'id': 'input-quantity'}
+    button_filter = {'id': 'button-filter'}
+
     class ProductEdit:
         """Локаторы для страницы редактирования продукта"""
         general_link = {'link': 'General'}

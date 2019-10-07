@@ -72,3 +72,11 @@ class ProductsPage(BasePage):
         self._click(Products.ProductEdit.description_area)
         self._input(Products.ProductEdit.description_area, description)
         return self
+
+    def product_filter(self, name='', model='', price='', quantity=''):
+
+        self._input(Products.input_model, model)
+        self._input(Products.input_price, price)
+        self._input(Products.input_name, name)
+        self._input(Products.input_name, quantity)
+        self._click(Products.button_filter)

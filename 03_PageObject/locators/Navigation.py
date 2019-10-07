@@ -8,4 +8,5 @@ class Navigation:
 
     catalog = {'link': 'Catalog'}
 
+    categories = {'link': 'Categories'}
     products = {'link': 'Products'}
