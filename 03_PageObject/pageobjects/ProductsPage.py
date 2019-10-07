@@ -74,7 +74,7 @@ class ProductsPage(BasePage):
         return self
 
     def product_filter(self, name='', model='', price='', quantity=''):
-
+        """Поиск продукта по заданным параметрам"""
         self._input(Products.input_model, model)
         self._input(Products.input_price, price)
         self._input(Products.input_name, name)

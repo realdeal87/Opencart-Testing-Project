@@ -4,6 +4,7 @@ from .BasePage import BasePage
 
 
 class ProfilePage(BasePage):
+    """Методы описывают действия в меню администратора"""
 
     def save_changes(self):
         """Сохранение изменений"""

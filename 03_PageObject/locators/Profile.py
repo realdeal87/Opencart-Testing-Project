@@ -1,4 +1,8 @@
+"""Локаторы для профиля администратора сайта Opencart"""
+
+
 class Profile:
+    """Локаторы для профиля администратора"""
 
     input_username = {'id': 'input-username'}
     input_firstname = {'id': 'input-firstname'}

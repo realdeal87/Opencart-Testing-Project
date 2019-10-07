@@ -21,6 +21,7 @@ class Admin:
         cancel_button = {'css': 'a.btn'}
 
     class AdminBar:
+        """Локаторы для меню администратора"""
 
         dropdown_toggle = {'class': 'dropdown-toggle'}
         your_profile = {'css': '.dropdown > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)'}
