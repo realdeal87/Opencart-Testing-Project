@@ -1,6 +1,6 @@
 """Дополнительные тестовые сценарии для сайта Opencart"""
-from pageobjects import AdminBar, AdminPage, AlertMSG, DashBoardPage, \
-    NavigationBar, ProductsPage, ProfilePage
+from pageobjects import AdminBar, AdminPage, AlertMSG, ButtonGroup,\
+    DashBoardPage, NavigationBar, ProductsPage, ProfilePage
 
 
 def test_copy_product(driver, url):
@@ -8,8 +8,8 @@ def test_copy_product(driver, url):
     AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
     NavigationBar(driver).catalog().products()
     ProductsPage(driver) \
-        .choose_products(number=2, quantity=2) \
-        .copy_products()
+        .choose_products(number=2, quantity=2)
+    ButtonGroup(driver).copy()
     AlertMSG(driver).check_alert_success()
 
 

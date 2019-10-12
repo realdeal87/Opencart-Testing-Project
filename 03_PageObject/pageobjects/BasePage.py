@@ -1,9 +1,9 @@
 """Модуль описывает базовые действия на сайте opencart"""
+import os
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from .common.Alert import Alert
 
 
 class BasePage:
@@ -12,7 +12,6 @@ class BasePage:
     def __init__(self, driver, url=None):
         self.driver = driver
         self.url = url
-        self.alert = Alert(self.driver)
 
     def __element(self, selector: dict, number: int):
         """Получение элементов на странице"""
@@ -63,3 +62,14 @@ class BasePage:
     def _get_title(self):
         """Получение заголовка страницы"""
         return self.driver.title
+
+    def alert(self):
+        return self.driver.switch_to.alert
+
+    def _upload_file(self, script, file):
+        """Загрузка файлов в форму"""
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, file)
+        self.driver.execute_script(script)
+        element = self.driver.find_element_by_css_selector("input[type=file]")
+        element.send_keys(filename)

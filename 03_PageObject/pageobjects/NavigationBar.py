@@ -20,3 +20,8 @@ class NavigationBar(BasePage):
         """Переход в подраздел Products"""
         self._click(Navigation.products)
         return self
+
+    def downloads(self):
+        """Переход в подраздел Downloads"""
+        self._click(Navigation.downloads)
+        return self

@@ -10,3 +10,4 @@ class Navigation:
 
     categories = {'link': 'Categories'}
     products = {'link': 'Products'}
+    downloads = {'link': 'Downloads'}

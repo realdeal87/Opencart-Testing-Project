@@ -1,12 +1,8 @@
-"""Локаторы для раздела каталога Products панели администратора сайта Opencart"""
+"""Локаторы для раздела Products панели администратора сайта Opencart"""
 
 
 class Products:
     """Локаторы для раздела каталога Products"""
-
-    add_new_button = {'css': 'a.btn:nth-child(2)'}
-    copy_button = {'css': 'button.btn:nth-child(3)'}
-    delete_button = {'css': 'button.btn:nth-child(4)'}
 
     checkbox_all = {'css': '.table > thead:nth-child(1) > tr:nth-child(1)'
                            ' > td:nth-child(1) > input:nth-child(1)'}
@@ -33,5 +29,11 @@ class Products:
         data_link = {'link': 'Data'}
         model = {'id': 'input-model'}
 
-        save_button = {'css': 'div.pull-right > button:nth-child(1)'}
-        cancel_button = {'css': 'a.btn'}
+        image_link = {'link': 'Image'}
+        thumb_image = {'id': 'thumb-image'}
+        button_image = {'id': 'button-image'}
+        button_clear = {'id': 'button-clear'}
+
+        filemanager = {'id': 'filemanager'}
+        button_upload = {'id': 'button-upload'}
+
