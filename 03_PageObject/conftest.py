@@ -1,4 +1,5 @@
 """Модуль предустановок для тестирования сайта Opencart"""
+import logging
 import pytest
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions, FirefoxOptions
@@ -59,3 +60,30 @@ def driver(request):
     web.implicitly_wait(waiting)
     # request.addfinalizer(web.quit)
     return web
+
+
+@pytest.fixture
+def logging_test():
+    # создаём logger
+    logger = logging.getLogger("opencart-testing")
+    logger.setLevel(logging.DEBUG)
+
+    # создаём консольный handler и задаём уровень
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.WARNING)
+
+    # создаём файловый handler и задаём уровень
+    fh = logging.FileHandler("./opencart-testing.log")
+    fh.setLevel(logging.INFO)
+
+    # создаём formatter
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+    # добавляем formatter в ch и fh
+    ch.setFormatter(formatter)
+    fh.setFormatter(formatter)
+
+    # добавляем ch и fh к logger
+    logger.addHandler(ch)
+    logger.addHandler(fh)
+    return logger
