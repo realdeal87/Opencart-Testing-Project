@@ -73,7 +73,7 @@ def logging_test():
     ch.setLevel(logging.WARNING)
 
     # создаём файловый handler и задаём уровень
-    fh = logging.FileHandler("./opencart-testing.log")
+    fh = logging.FileHandler("03_PageObject/opencart-testing.log")
     fh.setLevel(logging.INFO)
 
     # создаём formatter
