@@ -1,0 +1,37 @@
+ERROR:root:2019-10-16_02:03:01_firefox_Unable to locate element: [id="lolka"]
+ERROR:root:2019-10-16_02:04:31_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-16_02:08:07_firefox_Unable to locate element: [id="lolka"]
+ERROR:root:2019-10-16_02:08:28_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-16_02:12:15_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-16_02:13:03_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+INFO:root:Opening elementidinput-username
+INFO:root:Find elementidinput-username
+INFO:root:Opening elementidinput-password
+INFO:root:Find elementidinput-password
+INFO:root:Opening elementcss selector.btn
+INFO:root:Find elementcss selector.btn
+INFO:root:Opening elementlink textCatalog
+INFO:root:Find elementlink textCatalog
+INFO:root:Opening elementlink textProducts
+INFO:root:Find elementlink textProducts
+INFO:root:Opening elementxpath//a[@data-original-title="Add New"]
+INFO:root:Find elementxpath//a[@data-original-title="Add New"]
+INFO:root:Opening elementidlolka
+ERROR:root:2019-10-16_02:15:00_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-16_02:16:36_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+INFO:opencart_testing:На этом месте тест упадет
+ERROR:root:2019-10-16_02:18:46_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)

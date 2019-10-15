@@ -5,6 +5,8 @@ from pageobjects import MainPage
 def test_opencart_mainpage(driver, url, logging_test):
     """Открыть в браузере основную страницу opencart"""
 
+    driver.find_element_by_id("lolka")
+
     logging_test.debug('debug message')
     logging_test.info('info message')
     logging_test.warning('warn message')

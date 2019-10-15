@@ -1,8 +1,10 @@
 """Модуль предустановок для тестирования сайта Opencart"""
+import datetime
 import logging
 import pytest
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions, FirefoxOptions
+from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
 
 
 def pytest_addoption(parser):
@@ -47,12 +49,14 @@ def driver(request):
 
     if browser == "Chrome":
         options = ChromeOptions()
-        # options.add_argument("--headless")
-        web = webdriver.Chrome(options=options)
+        options.add_argument("--headless")
+        # web = webdriver.Chrome(options=options)
+        web = EventFiringWebDriver(webdriver.Chrome(options=options), MyListener())
     elif browser == "Firefox":
         options = FirefoxOptions()
-        # options.add_argument("--headless")
-        web = webdriver.Firefox(options=options)
+        options.add_argument("--headless")
+        # web = webdriver.Firefox(options=options)
+        web = EventFiringWebDriver(webdriver.Firefox(options=options), MyListener())
     else:
         raise Exception(f"{browser} is not supported!")
 
@@ -62,28 +66,40 @@ def driver(request):
     return web
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def logging_test():
     # создаём logger
-    logger = logging.getLogger("opencart-testing")
+    logger = logging.getLogger("opencart_testing")
     logger.setLevel(logging.DEBUG)
-
     # создаём консольный handler и задаём уровень
     ch = logging.StreamHandler()
     ch.setLevel(logging.WARNING)
-
     # создаём файловый handler и задаём уровень
-    fh = logging.FileHandler("03_PageObject/opencart-testing.log")
+    fh = logging.FileHandler("03_PageObject/logs/opencart_testing.log")
     fh.setLevel(logging.INFO)
-
     # создаём formatter
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
+    formatter = logging.Formatter('%(asctime)s - %(funcName)s - %(levelname)s - %(message)s')
     # добавляем formatter в ch и fh
     ch.setFormatter(formatter)
     fh.setFormatter(formatter)
-
     # добавляем ch и fh к logger
     logger.addHandler(ch)
     logger.addHandler(fh)
     return logger
+
+
+class MyListener(AbstractEventListener):
+    logging.basicConfig(filename="03_PageObject/logs/opencart_testing_webdriver.log", level=logging.ERROR)
+
+    def before_find(self, by, value, driver):
+        logging.info("Opening element " + by + value)
+
+    def after_find(self, by, value, driver):
+        logging.info("Find element " + by + value)
+        pass
+
+    def on_exception(self, exception, driver):
+        now = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S_")
+        message = str(now) + driver.name + "_" + exception.msg
+        driver.save_screenshot("03_PageObject/screenshots/" + message[:55] + ".png")
+        logging.error(message)

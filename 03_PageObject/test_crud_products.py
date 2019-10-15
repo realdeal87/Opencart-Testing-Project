@@ -2,7 +2,7 @@
 from pageobjects import AdminPage, AlertMSG, ButtonGroup, NavigationBar, ProductsPage
 
 
-def test_create_product(driver, url):
+def test_create_product(driver, url, logging_test):
     """Успешное добавление продукта с заполнением требуемых полей"""
 
     p_name = "Alcatel OT-890"
@@ -12,6 +12,8 @@ def test_create_product(driver, url):
     AdminPage(driver, url).open().login(login="Realdeal87", password="K1x9Z5b8!")
     NavigationBar(driver).catalog().products()
     ButtonGroup(driver).add_new()
+    logging_test.info("На этом месте тест упадет")
+    driver.find_element_by_id("lolka")
     ProductsPage(driver) \
         .fill_required_fields(p_name, p_meta_teg_title, p_model)
     ButtonGroup(driver).save()
