@@ -49,12 +49,12 @@ def driver(request):
 
     if browser == "Chrome":
         options = ChromeOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # web = webdriver.Chrome(options=options)
         web = EventFiringWebDriver(webdriver.Chrome(options=options), MyListener())
     elif browser == "Firefox":
         options = FirefoxOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # web = webdriver.Firefox(options=options)
         web = EventFiringWebDriver(webdriver.Firefox(options=options), MyListener())
     else:
@@ -62,7 +62,13 @@ def driver(request):
 
     web.maximize_window()
     web.implicitly_wait(waiting)
-    # request.addfinalizer(web.quit)
+
+    def fin():
+        if web.name == "chrome":
+            browser_logging(web)
+        web.quit()
+
+    request.addfinalizer(fin)
     return web
 
 
@@ -96,10 +102,17 @@ class MyListener(AbstractEventListener):
 
     def after_find(self, by, value, driver):
         logging.info("Find element " + by + value)
-        pass
 
     def on_exception(self, exception, driver):
         now = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S_")
         message = str(now) + driver.name + "_" + exception.msg
         driver.save_screenshot("03_PageObject/screenshots/" + message[:55] + ".png")
         logging.error(message)
+
+
+def browser_logging(driver):
+    with open("03_PageObject/logs/opencart_testing_browser.log", "a") as file:
+        for line in driver.get_log('browser'):
+            message = str(line["timestamp"]) + " - " + str(line["source"]) + " - " +\
+                str(line["level"]) + " - " + str(line["message"] + "\n")
+            file.write(message)

@@ -35,3 +35,29 @@ INFO:opencart_testing:На этом месте тест упадет
 ERROR:root:2019-10-16_02:18:46_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
   (Session info: headless chrome=73.0.3683.75)
   (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-16_23:51:44_chrome_invalid argument: log type 'Browser' not found
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+INFO:opencart_testing:На этом месте тест упадет
+ERROR:root:2019-10-16_23:52:36_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-16_23:53:34_chrome_invalid argument: log type 'Browser' not found
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-17_00:14:08_firefox_GET /session/e5a025c6-4cec-4f31-8208-5fc4a11bdb69/log/types did not match a known command
+ERROR:root:2019-10-17_00:17:11_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-17_01:30:09_firefox_POST /session/6c5c51b1-3f41-478b-8509-a475c5c39b5f/log did not match a known command
+ERROR:root:2019-10-17_01:30:20_firefox_POST /session/39683b80-8907-44c5-87e2-3e9a8897ad97/log did not match a known command
+ERROR:root:2019-10-17_01:30:28_firefox_POST /session/c26e905d-5aaf-4c00-a2ad-b51d8edaeacb/log did not match a known command
+ERROR:root:2019-10-17_01:31:22_firefox_POST /session/cda3a98e-86e9-48b5-a207-4c52f496d345/log did not match a known command
+ERROR:root:2019-10-17_01:31:33_firefox_POST /session/519d7ad6-a3c3-48b5-80c8-8e61b846338b/log did not match a known command
+ERROR:root:2019-10-17_01:31:41_firefox_POST /session/59ea9b54-d8f7-434d-ab25-7e90b068053d/log did not match a known command
+ERROR:root:2019-10-17_01:32:17_firefox_POST /session/13fec65c-986d-4869-a7fc-6be694fe91f1/log did not match a known command
+ERROR:root:2019-10-17_01:32:28_firefox_POST /session/0f093768-b41c-453f-b4c5-8f6ddc7ee175/log did not match a known command
+ERROR:root:2019-10-17_01:32:36_firefox_POST /session/f62a7636-e53a-4116-84ee-010673f205d7/log did not match a known command
+ERROR:root:2019-10-17_01:35:35_firefox_POST /session/1b498f1b-b46c-4647-a5f7-9318f8bbbdd5/log did not match a known command
+ERROR:root:2019-10-17_01:35:46_firefox_POST /session/c82988c4-b6e8-4e9d-bdfe-f9b655dc12ce/log did not match a known command
+ERROR:root:2019-10-17_01:35:53_firefox_POST /session/bf0df87c-62e9-4809-801f-a530c5d10bc5/log did not match a known command
