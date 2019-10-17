@@ -1,2 +1,13 @@
 2019-10-16 02:18:36,727 - test_create_product - INFO - На этом месте тест упадет
 2019-10-16 23:52:26,021 - test_create_product - INFO - На этом месте тест упадет
+2019-10-17 02:54:47,115 - test_opencart_mainpage - INFO - info message
+2019-10-17 02:54:47,115 - test_opencart_mainpage - WARNING - warn message
+2019-10-17 02:54:47,115 - test_opencart_mainpage - ERROR - error message
+2019-10-17 02:54:47,115 - test_opencart_mainpage - CRITICAL - critical message
+2019-10-17 22:07:34,189 - test_opencart_mainpage - INFO - info message
+2019-10-17 22:07:34,251 - test_opencart_mainpage - WARNING - warn message
+2019-10-17 22:07:34,251 - test_opencart_mainpage - ERROR - error message
+2019-10-17 22:07:34,251 - test_opencart_mainpage - CRITICAL - critical message
+2019-10-17 23:12:35,659 - test_create_product - INFO - На этом месте тест упадет
+2019-10-17 23:14:04,932 - test_create_product - INFO - На этом месте тест упадет
+2019-10-17 23:26:09,224 - test_create_product - INFO - На этом месте тест упадет

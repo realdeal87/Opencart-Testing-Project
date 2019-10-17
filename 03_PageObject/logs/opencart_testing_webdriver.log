@@ -61,3 +61,25 @@ ERROR:root:2019-10-17_01:32:36_firefox_POST /session/f62a7636-e53a-4116-84ee-010
 ERROR:root:2019-10-17_01:35:35_firefox_POST /session/1b498f1b-b46c-4647-a5f7-9318f8bbbdd5/log did not match a known command
 ERROR:root:2019-10-17_01:35:46_firefox_POST /session/c82988c4-b6e8-4e9d-bdfe-f9b655dc12ce/log did not match a known command
 ERROR:root:2019-10-17_01:35:53_firefox_POST /session/bf0df87c-62e9-4809-801f-a530c5d10bc5/log did not match a known command
+DEBUG:opencart_testing:debug message
+INFO:opencart_testing:info message
+WARNING:opencart_testing:warn message
+ERROR:opencart_testing:error message
+CRITICAL:opencart_testing:critical message
+DEBUG:opencart_testing:debug message
+INFO:opencart_testing:info message
+WARNING:opencart_testing:warn message
+ERROR:opencart_testing:error message
+CRITICAL:opencart_testing:critical message
+INFO:opencart_testing:На этом месте тест упадет
+ERROR:root:2019-10-17_23:12:45_firefox_Unable to locate element: [id="lolka"]
+INFO:opencart_testing:На этом месте тест упадет
+ERROR:root:2019-10-17_23:14:14_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-17_23:24:54_firefox_No modal dialog is currently open
+ERROR:root:2019-10-17_23:25:06_firefox_No modal dialog is currently open
+INFO:opencart_testing:На этом месте тест упадет
+ERROR:root:2019-10-17_23:26:19_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
