@@ -1,16 +1,15 @@
 """Базовая проверка с использованием Selenium"""
+import allure
 from pageobjects import MainPage
 
 
+@allure.feature("Баовые операции")
+@allure.story("Отркрытие главной страницы")
+@allure.title("Отркрытие главной страницы")
 def test_opencart_mainpage(driver, url, logging_test):
     """Открыть в браузере основную страницу opencart"""
-
-    # driver.find_element_by_id("lolka")
-    #
-    # logging_test.debug('debug message')
-    # logging_test.info('info message')
-    # logging_test.warning('warn message')
-    # logging_test.error('error message')
-    # logging_test.critical('critical message')
-
-    assert MainPage(driver, url).open().title() == "Your Store"
+    with allure.step("Переход на главную страницу"):
+        MainPage(driver, url).open()
+    with allure.step("Сравнение заголовка страницы"):
+        # assert MainPage(driver).title() == "Your Store"
+        assert MainPage(driver).title() == "OLOLO"

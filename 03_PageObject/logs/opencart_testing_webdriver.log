@@ -83,3 +83,85 @@ INFO:opencart_testing:На этом месте тест упадет
 ERROR:root:2019-10-17_23:26:19_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
   (Session info: chrome=73.0.3683.75)
   (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:45:16_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:48:48_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:49:02_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:51:12_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:51:29_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:52:01_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:52:43_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (1202, 914). Other element would receive the click: <div class="caption">...</div>
+  (Session info: chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:52:50_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (1202, 914). Other element would receive the click: <div class="caption">...</div>
+  (Session info: chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_22:54:10_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (1202, 914). Other element would receive the click: <div class="caption">...</div>
+  (Session info: chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-27_23:28:43_firefox_
+ERROR:root:2019-10-27_23:30:26_firefox_No modal dialog is currently open
+ERROR:root:2019-10-27_23:57:00_firefox_Element <a href="http://localhost/opencart/admin/index.php?route=catalog/product&user_token=jn3D16PpGodRt93ODP88r7HssExS1NXr"> could not be scrolled into view
+ERROR:root:2019-10-28_00:16:25_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_00:19:39_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_00:19:53_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_01:32:53_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_01:34:20_firefox_
+ERROR:root:2019-10-28_02:04:37_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:12:40_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:30:03_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:30:26_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:32:04_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:33:12_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:34:27_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:36:08_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:39:42_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:42:22_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:43:43_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:44:03_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:45:14_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:46:57_firefox_
+ERROR:root:2019-10-28_02:47:58_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_02:50:02_firefox_
+ERROR:root:2019-10-28_02:52:16_firefox_
+ERROR:root:2019-10-28_02:56:24_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_03:06:53_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-28_03:17:00_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_03:18:30_firefox_
+ERROR:root:2019-10-28_03:19:19_firefox_
+ERROR:root:2019-10-28_03:35:05_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_03:35:58_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_03:39:07_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_03:49:05_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_03:51:28_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_03:59:04_firefox_No modal dialog is currently open
+ERROR:root:2019-10-28_04:01:48_firefox_
+ERROR:root:2019-10-28_04:03:25_firefox_
+ERROR:root:2019-10-28_20:45:15_firefox_
+INFO:opencart_testing:На этом месте тест упадет
+ERROR:root:2019-10-28_21:03:11_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+INFO:opencart_testing:На этом месте тест упадет
+ERROR:root:2019-10-28_21:09:26_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-28_21:11:31_chrome_unknown error: Element <button type="button" data-toggle="tooltip" title="" onclick="compare.add('33');" data-original-title="Compare this Product">...</button> is not clickable at point (709, 580). Other element would receive the click: <div class="caption">...</div>
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)
+ERROR:root:2019-10-28_21:16:36_chrome_timeout
+  (Session info: headless chrome=73.0.3683.75)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)

@@ -2,6 +2,7 @@
 import datetime
 import logging
 import urllib.parse
+import allure
 import pytest
 from browsermobproxy import Server, Client
 from selenium import webdriver
@@ -49,7 +50,7 @@ def proxy():
     server = Server("03_PageObject/browsermob-proxy-2.1.4/bin/browsermob-proxy")
     server.start()
     client = Client("localhost:8080")
-    print(client.port)
+    # print(client.port)
     client.new_har()
     return client
 
@@ -64,14 +65,13 @@ def driver(request, proxy):
     if browser == "Chrome":
         options = ChromeOptions()
         options.add_argument('--proxy-server=%s' % url)
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         # web = webdriver.Chrome(options=options)
         web = EventFiringWebDriver(webdriver.Chrome(options=options), MyListener())
     elif browser == "Firefox":
         options = FirefoxOptions()
         options.add_argument('--proxy-server=%s' % url)
-        # options.add_argument("--headless")
-        # web = webdriver.Firefox(options=options)
+        options.add_argument("--headless")
         web = EventFiringWebDriver(webdriver.Firefox(options=options), MyListener())
     else:
         raise Exception(f"{browser} is not supported!")
@@ -130,7 +130,9 @@ class MyListener(AbstractEventListener):
         """Логирование в случае ошибки, создание скриншота"""
         now = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S_")
         message = str(now) + driver.name + "_" + exception.msg
-        driver.save_screenshot("03_PageObject/screenshots/" + message[:55] + ".png")
+        path = "03_PageObject/screenshots/" + message[:55] + ".png"
+        driver.save_screenshot(path)
+        allure.attach.file(path, attachment_type=allure.attachment_type.PNG)
         logging.error(message)
 
 

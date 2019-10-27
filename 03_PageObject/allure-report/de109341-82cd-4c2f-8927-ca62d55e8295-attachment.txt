@@ -1,0 +1,4 @@
+[32mINFO    [0m opencart_testing:test_crud_products.py:22 На этом месте тест упадет
+[1m[31mERROR   [0m root:conftest.py:136 2019-10-28_21:09:26_chrome_no such element: Unable to locate element: {"method":"id","selector":"lolka"}
+                                (Session info: headless chrome=73.0.3683.75)
+                                (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Linux 4.9.0-11-amd64 x86_64)

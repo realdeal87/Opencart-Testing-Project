@@ -14,3 +14,12 @@
 1571343966135 - network - SEVERE - http://localhost/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)
 1571343987657 - network - SEVERE - http://localhost/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)
 1571344000360 - network - SEVERE - http://localhost/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)
+1572221086113 - other - WARNING - http://localhost/opencart/admin/index.php?route=common/dashboard&user_token=Nv71vnD78NkERqZjZWhT4k9LfJB5p8H8 - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/300
+1572221088566 - other - WARNING - http://localhost/opencart/admin/index.php?route=catalog/product&user_token=Nv71vnD78NkERqZjZWhT4k9LfJB5p8H8 - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/300
+1572221090224 - other - WARNING - http://localhost/opencart/admin/index.php?route=catalog/product/edit&user_token=Nv71vnD78NkERqZjZWhT4k9LfJB5p8H8&product_id=323 - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/300
+1572221097368 - other - WARNING - http://localhost/opencart/admin/index.php?route=catalog/product&user_token=Nv71vnD78NkERqZjZWhT4k9LfJB5p8H8 - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/300
+1572284886411 - other - WARNING - http://localhost/opencart/admin/ - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/400
+1572284887293 - other - WARNING - http://localhost/opencart/admin/index.php?route=common/dashboard&user_token=EmPqle4PF7cUcCxe6ZUsH5p1BwLyLZrm - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/400
+1572284888213 - other - WARNING - http://localhost/opencart/admin/index.php?route=catalog/product&user_token=EmPqle4PF7cUcCxe6ZUsH5p1BwLyLZrm - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/400
+1572284888600 - other - WARNING - http://localhost/opencart/admin/index.php?route=catalog/product/add&user_token=EmPqle4PF7cUcCxe6ZUsH5p1BwLyLZrm - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/400
+1572284890050 - other - WARNING - http://localhost/opencart/admin/index.php?route=catalog/product&user_token=EmPqle4PF7cUcCxe6ZUsH5p1BwLyLZrm - Failed to decode downloaded font: http://fonts.gstatic.com/stats/Open+Sans/normal/400
