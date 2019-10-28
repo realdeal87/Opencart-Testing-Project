@@ -11,5 +11,4 @@ def test_opencart_mainpage(driver, url, logging_test):
     with allure.step("Переход на главную страницу"):
         MainPage(driver, url).open()
     with allure.step("Сравнение заголовка страницы"):
-        # assert MainPage(driver).title() == "Your Store"
-        assert MainPage(driver).title() == "OLOLO"
+        assert MainPage(driver).title() == "Your Store"

@@ -4,6 +4,7 @@ import logging
 import urllib.parse
 import allure
 import pytest
+import psutil
 from browsermobproxy import Server, Client
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions, FirefoxOptions
@@ -52,7 +53,7 @@ def proxy():
     client = Client("localhost:8080")
     # print(client.port)
     client.new_har()
-    return client
+    return server, client
 
 
 @pytest.fixture
@@ -60,7 +61,7 @@ def driver(request, proxy):
     """Фикстура для запуска браузеров {Chrome, Firefox} в полноэкранном режиме"""
     browser = request.config.getoption("--browser")
     waiting = request.config.getoption("--waiting")
-    url = urllib.parse.urlparse(proxy.proxy).path
+    url = urllib.parse.urlparse(proxy[1].proxy).path
 
     if browser == "Chrome":
         options = ChromeOptions()
@@ -83,7 +84,13 @@ def driver(request, proxy):
         """Файнолайзер: запись логов браузера, прокси сервера, закрытие браузера"""
         if web.name == "chrome":
             browser_logging(web)
-        proxy_logging(proxy)
+        proxy_logging(proxy[1])
+        # Поскольку этой коммандой прокси сервер не останавливается
+        # proxy[0].stop()
+        # приходится убивать процесс вручную
+        for process in psutil.process_iter():
+            if "-Dapp.name=browsermob-proxy" in process.cmdline():
+                process.kill()
         web.quit()
 
     request.addfinalizer(fin)

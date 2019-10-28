@@ -19,8 +19,6 @@ def test_create_product(driver, url, logging_test):
         NavigationBar(driver).catalog().products()
     with allure.step("Нажатие кнопки Add New"):
         ButtonGroup(driver).add_new()
-        logging_test.info("На этом месте тест упадет")
-        driver.find_element_by_id("lolka")
     with allure.step("Заполнение обязательных полей формы"):
         ProductsPage(driver) \
             .fill_required_fields(p_name, p_meta_teg_title, p_model)
