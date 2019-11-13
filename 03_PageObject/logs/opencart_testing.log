@@ -13,3 +13,43 @@
 2019-10-17 23:26:09,224 - test_create_product - INFO - На этом месте тест упадет
 2019-10-28 21:02:51,891 - test_create_product - INFO - На этом месте тест упадет
 2019-10-28 21:09:05,974 - test_create_product - INFO - На этом месте тест упадет
+2019-11-14 21:30:12,414 - test_db - INFO - info message
+2019-11-14 21:31:17,861 - test_db - INFO - info message
+2019-11-14 21:34:31,299 - test_db - INFO - info message
+2019-11-14 21:34:54,966 - test_db - INFO - info message
+2019-11-14 21:36:03,203 - test_db - INFO - info message
+2019-11-14 21:36:03,274 - test_db - WARNING - warn message
+2019-11-14 21:36:03,340 - test_db - ERROR - error message
+2019-11-14 21:36:03,399 - test_db - CRITICAL - critical message
+2019-11-14 21:36:36,578 - test_db - INFO - info message
+2019-11-14 21:36:36,655 - test_db - WARNING - warn message
+2019-11-14 21:36:36,722 - test_db - ERROR - error message
+2019-11-14 21:36:36,780 - test_db - CRITICAL - critical message
+2019-11-14 21:42:36,538 - test_db - INFO - info message
+2019-11-14 21:42:36,600 - test_db - WARNING - warn message
+2019-11-14 21:42:36,650 - test_db - ERROR - error message
+2019-11-14 21:42:36,700 - test_db - CRITICAL - critical message
+2019-11-14 21:43:26,610 - test_db - INFO - info message
+2019-11-14 21:43:26,689 - test_db - WARNING - warn message
+2019-11-14 21:43:26,747 - test_db - ERROR - error message
+2019-11-14 21:43:26,814 - test_db - CRITICAL - critical message
+2019-11-14 21:45:31,568 - test_db - INFO - info message
+2019-11-14 21:45:31,659 - test_db - WARNING - warn message
+2019-11-14 21:45:31,709 - test_db - ERROR - error message
+2019-11-14 21:45:31,776 - test_db - CRITICAL - critical message
+2019-11-14 21:45:56,006 - test_db - INFO - info message
+2019-11-14 21:45:56,084 - test_db - WARNING - warn message
+2019-11-14 21:45:56,149 - test_db - ERROR - error message
+2019-11-14 21:45:56,208 - test_db - CRITICAL - critical message
+2019-11-14 21:47:02,351 - test_db - INFO - info message
+2019-11-14 21:47:02,412 - test_db - WARNING - warn message
+2019-11-14 21:47:02,470 - test_db - ERROR - error message
+2019-11-14 21:47:02,529 - test_db - CRITICAL - critical message
+2019-11-14 21:49:50,039 - test_db - INFO - info message
+2019-11-14 21:49:50,095 - test_db - WARNING - warn message
+2019-11-14 21:49:50,162 - test_db - ERROR - error message
+2019-11-14 21:49:50,228 - test_db - CRITICAL - critical message
+2019-11-14 21:52:55,214 - test_db - INFO - info message
+2019-11-14 21:52:55,284 - test_db - WARNING - warn message
+2019-11-14 21:52:55,327 - test_db - ERROR - error message
+2019-11-14 21:52:55,385 - test_db - CRITICAL - critical message

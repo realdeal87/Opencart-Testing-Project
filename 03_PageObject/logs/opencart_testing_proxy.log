@@ -1913,3 +1913,83 @@ creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
 pages->[{'id': 'Page 0', 'startedDateTime': '2019-10-28T21:17:38.608+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
 entries->[{'pageref': 'Page 0', 'startedDateTime': '2019-10-28T21:17:42.921+03:00', 'request': {'method': 'GET', 'url': 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,greek-ext,vietnamese', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'queryString': [{'name': 'family', 'value': 'Open Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'}, {'name': 'subset', 'value': 'latin,cyrillic-ext,greek-ext,vietnamese'}], 'headersSize': 471, 'bodySize': 0, 'comment': ''}, 'response': {'status': 200, 'statusText': 'OK', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'content': {'size': 0, 'mimeType': 'text/css; charset=utf-8', 'comment': ''}, 'redirectURL': '', 'headersSize': 487, 'bodySize': 1109, 'comment': ''}, 'cache': {}, 'timings': {'comment': '', 'send': 0, 'wait': 26, 'receive': 0, 'ssl': -1, 'connect': 21, 'blocked': 0, 'dns': 4}, 'serverIPAddress': '173.194.221.95', 'comment': '', 'time': 54}, {'pageref': 'Page 0', 'startedDateTime': '2019-10-28T21:17:43.078+03:00', 'request': {'method': 'GET', 'url': 'http://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'queryString': [], 'headersSize': 521, 'bodySize': 0, 'comment': ''}, 'response': {'status': 200, 'statusText': 'OK', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'content': {'size': 0, 'mimeType': 'font/woff2', 'comment': ''}, 'redirectURL': '', 'headersSize': 394, 'bodySize': 15056, 'comment': ''}, 'cache': {}, 'timings': {'comment': '', 'send': 0, 'wait': 21, 'receive': 19, 'ssl': -1, 'connect': 25, 'blocked': 0, 'dns': 7}, 'serverIPAddress': '173.194.222.94', 'comment': '', 'time': 75}, {'pageref': 'Page 0', 'startedDateTime': '2019-10-28T21:17:43.078+03:00', 'request': {'method': 'GET', 'url': 'http://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0b.woff2', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'queryString': [], 'headersSize': 517, 'bodySize': 0, 'comment': ''}, 'response': {'status': 200, 'statusText': 'OK', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'content': {'size': 0, 'mimeType': 'font/woff2', 'comment': ''}, 'redirectURL': '', 'headersSize': 394, 'bodySize': 14380, 'comment': ''}, 'cache': {}, 'timings': {'comment': '', 'send': 0, 'wait': 23, 'receive': 21, 'ssl': -1, 'connect': 323, 'blocked': 0, 'dns': 10}, 'serverIPAddress': '173.194.222.94', 'comment': '', 'time': 378}, {'pageref': 'Page 0', 'startedDateTime': '2019-10-28T21:17:44.131+03:00', 'request': {'method': 'GET', 'url': 'http://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'queryString': [], 'headersSize': 521, 'bodySize': 0, 'comment': ''}, 'response': {'status': 200, 'statusText': 'OK', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'content': {'size': 0, 'mimeType': 'font/woff2', 'comment': ''}, 'redirectURL': '', 'headersSize': 394, 'bodySize': 14932, 'comment': ''}, 'cache': {}, 'timings': {'comment': '', 'send': 0, 'wait': 47, 'receive': 0, 'ssl': -1, 'connect': -1, 'blocked': -1, 'dns': -1}, 'serverIPAddress': '173.194.222.94', 'comment': '', 'time': 47}, {'pageref': 'Page 0', 'startedDateTime': '2019-10-28T21:17:44.183+03:00', 'request': {'method': 'GET', 'url': 'http://fonts.gstatic.com/s/opensans/v17/mem6YaGs126MiZpBA-UFUK0Zdc0.woff2', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'queryString': [], 'headersSize': 520, 'bodySize': 0, 'comment': ''}, 'response': {'status': 200, 'statusText': 'OK', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'content': {'size': 0, 'mimeType': 'font/woff2', 'comment': ''}, 'redirectURL': '', 'headersSize': 394, 'bodySize': 13780, 'comment': ''}, 'cache': {}, 'timings': {'comment': '', 'send': 0, 'wait': 21, 'receive': 4, 'ssl': -1, 'connect': -1, 'blocked': -1, 'dns': -1}, 'serverIPAddress': '173.194.222.94', 'comment': '', 'time': 26}, {'pageref': 'Page 0', 'startedDateTime': '2019-10-28T21:17:49.167+03:00', 'request': {'method': 'GET', 'url': 'http://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFUZ0bbck.woff2', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'queryString': [], 'headersSize': 520, 'bodySize': 0, 'comment': ''}, 'response': {'status': 200, 'statusText': 'OK', 'httpVersion': 'HTTP/1.1', 'cookies': [], 'headers': [], 'content': {'size': 0, 'mimeType': 'font/woff2', 'comment': ''}, 'redirectURL': '', 'headersSize': 393, 'bodySize': 9400, 'comment': ''}, 'cache': {}, 'timings': {'comment': '', 'send': 0, 'wait': 22, 'receive': 3, 'ssl': -1, 'connect': -1, 'blocked': -1, 'dns': -1}, 'serverIPAddress': '173.194.222.94', 'comment': '', 'time': 25}]
 comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:21:41.910+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:23:34.936+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:27:36.503+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:30:11.016+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:31:16.440+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:34:29.888+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:34:53.557+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:36:01.797+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:36:35.162+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:42:35.130+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:43:25.031+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:45:30.157+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:45:54.599+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:47:00.931+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:49:48.632+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->
+version->1.2
+creator->{'name': 'BrowserMob Proxy', 'version': '2.1.4', 'comment': ''}
+pages->[{'id': 'Page 0', 'startedDateTime': '2019-11-14T21:52:53.792+03:00', 'title': 'Page 0', 'pageTimings': {'comment': ''}, 'comment': ''}]
+entries->[]
+comment->

@@ -1,6 +1,8 @@
 """Модуль предустановок для тестирования сайта Opencart"""
 import datetime
+import time
 import logging
+import sqlite3
 import urllib.parse
 import allure
 import pytest
@@ -91,6 +93,14 @@ def driver(request, proxy):
         for process in psutil.process_iter():
             if "-Dapp.name=browsermob-proxy" in process.cmdline():
                 process.kill()
+
+        # Смотрим логи из базы данных
+        conn = sqlite3.connect("log.db")
+        cursor = conn.cursor()
+        for row in cursor.execute("SELECT * FROM log"):
+            print(row)
+        conn.close()
+
         web.quit()
 
     request.addfinalizer(fin)
@@ -109,6 +119,9 @@ def logging_test():
     # создаём файловый handler и задаём уровень
     fhr = logging.FileHandler("03_PageObject/logs/opencart_testing.log")
     fhr.setLevel(logging.INFO)
+    # создаём handler базы данных и задаем уровень
+    dbh = SQLiteHandler()
+    dbh.setLevel(logging.INFO)
     # создаём formatter
     formatter = logging.Formatter('%(asctime)s - %(funcName)s - %(levelname)s - %(message)s')
     # добавляем formatter в shr и fhr
@@ -117,7 +130,30 @@ def logging_test():
     # добавляем shr и fhr к logger
     logger.addHandler(shr)
     logger.addHandler(fhr)
+    logger.addHandler(dbh)
     return logger
+
+
+class SQLiteHandler(logging.Handler):
+    """Хендлер для базы данных"""
+    sql_create = """CREATE TABLE IF NOT EXISTS log (
+                    time text, function text, level text, message text);"""
+
+    sql_insert = """INSERT INTO log (time, function, level, message)
+                    VALUES ("%(asctime)s", "%(funcName)s", "%(levelname)s", "%(message)s");"""
+
+    def __init__(self, db="log.db"):
+        self.db = db
+        logging.Handler.__init__(self)
+        conn = sqlite3.connect(self.db)
+        conn.execute(SQLiteHandler.sql_create)
+        conn.commit()
+
+    def emit(self, record):
+        sql = SQLiteHandler.sql_insert % record.__dict__
+        conn = sqlite3.connect(self.db)
+        conn.execute(sql)
+        conn.commit()
 
 
 class MyListener(AbstractEventListener):

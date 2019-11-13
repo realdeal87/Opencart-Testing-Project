@@ -1,19 +1,7 @@
-[INFO  2019-10-28T21:17:40,515 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
-[INFO  2019-10-28T21:17:40,566 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
-[INFO  2019-10-28T21:17:40,606 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
-[WARN  2019-10-28T21:17:40,795 org.eclipse.jetty.util.log] (main) FAILED SelectChannelConnector@0.0.0.0:8080: java.net.BindException: Адрес уже используется 
-[WARN  2019-10-28T21:17:40,795 org.eclipse.jetty.util.log] (main) FAILED org.eclipse.jetty.server.Server@7f36662c: java.net.BindException: Адрес уже используется 
-[ERROR 2019-10-28T21:17:40,796 net.lightbody.bmp.proxy.Main] (main) Failed to start Jetty server. Aborting. java.net.BindException: Адрес уже используется
-	at sun.nio.ch.Net.bind0(Native Method) ~[?:1.8.0_232]
-	at sun.nio.ch.Net.bind(Net.java:433) ~[?:1.8.0_232]
-	at sun.nio.ch.Net.bind(Net.java:425) ~[?:1.8.0_232]
-	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[?:1.8.0_232]
-	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[?:1.8.0_232]
-	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:162) ~[browsermob-dist-2.1.4.jar:?]
-	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:356) ~[browsermob-dist-2.1.4.jar:?]
-	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:240) ~[browsermob-dist-2.1.4.jar:?]
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:55) ~[browsermob-dist-2.1.4.jar:?]
-	at org.eclipse.jetty.server.Server.doStart(Server.java:269) ~[browsermob-dist-2.1.4.jar:?]
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:55) ~[browsermob-dist-2.1.4.jar:?]
-	at net.lightbody.bmp.proxy.Main.main(Main.java:64) [browsermob-dist-2.1.4.jar:?]
-
+[INFO  2019-11-14T21:52:46,003 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2019-11-14T21:52:52,764 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2019-11-14T21:52:52,806 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2019-11-14T21:52:52,973 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
+[INFO  2019-11-14T21:52:53,631 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp1611832218-15) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
+[INFO  2019-11-14T21:52:53,683 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp1611832218-15) Proxy listening with TCP transport 
+[INFO  2019-11-14T21:52:53,748 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp1611832218-15) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
