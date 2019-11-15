@@ -86,3 +86,7 @@ class BasePage:
             self.driver.execute_script(script)
             element = self.driver.find_element_by_css_selector("input[type=file]")
             element.send_keys(filename)
+
+    def _get_value(self, selector, number=0):
+        """Получение значения поля ввода"""
+        return self.__element(selector, number).get_attribute("value")

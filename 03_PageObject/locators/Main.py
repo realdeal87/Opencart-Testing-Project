@@ -31,3 +31,24 @@ class Main:
         """Локаторы для поисковой строки"""
         search_field = {'name': 'search'}
         search_button = {'css': '.btn-default'}
+
+    class CustomerMenu:
+        """Локаторы для меню покупателя"""
+        my_account = {'xpath': '//a[@title="My Account"]'}
+        login = {'link': 'Login'}
+
+    class Login:
+        email = {'id': 'input-email'}
+        password = {'id': 'input-password'}
+        login_button = {'xpath': '//input[@value="Login"]'}
+
+    class MyAccount:
+        my_account = {'link': 'Edit your account information'}
+
+    class MyAccountInformation:
+        firstname = {'id': 'input-firstname'}
+        lastname = {'id': 'input-lastname'}
+        email = {'id': 'input-email'}
+        telephone = {'id': 'input-telephone'}
+
+

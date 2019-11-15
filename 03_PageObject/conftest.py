@@ -1,6 +1,5 @@
 """Модуль предустановок для тестирования сайта Opencart"""
 import datetime
-import time
 import logging
 import sqlite3
 import urllib.parse
@@ -75,6 +74,7 @@ def driver(request, proxy):
         options = FirefoxOptions()
         options.add_argument('--proxy-server=%s' % url)
         options.add_argument("--headless")
+        # web = webdriver.Firefox(options=options)
         web = EventFiringWebDriver(webdriver.Firefox(options=options), MyListener())
     else:
         raise Exception(f"{browser} is not supported!")
@@ -93,14 +93,12 @@ def driver(request, proxy):
         for process in psutil.process_iter():
             if "-Dapp.name=browsermob-proxy" in process.cmdline():
                 process.kill()
-
         # Смотрим логи из базы данных
-        conn = sqlite3.connect("log.db")
-        cursor = conn.cursor()
-        for row in cursor.execute("SELECT * FROM log"):
-            print(row)
-        conn.close()
-
+        # conn = sqlite3.connect("log.db")
+        # cursor = conn.cursor()
+        # for row in cursor.execute("SELECT * FROM log;"):
+        #     print(row)
+        # conn.close()
         web.quit()
 
     request.addfinalizer(fin)
@@ -135,23 +133,23 @@ def logging_test():
 
 
 class SQLiteHandler(logging.Handler):
-    """Хендлер для базы данных"""
+    """Хендлер для записи логов в базу данных SQLite"""
     sql_create = """CREATE TABLE IF NOT EXISTS log (
                     time text, function text, level text, message text);"""
 
     sql_insert = """INSERT INTO log (time, function, level, message)
                     VALUES ("%(asctime)s", "%(funcName)s", "%(levelname)s", "%(message)s");"""
 
-    def __init__(self, db="log.db"):
-        self.db = db
+    def __init__(self, dbase="log.db"):
+        self.dbase = dbase
         logging.Handler.__init__(self)
-        conn = sqlite3.connect(self.db)
+        conn = sqlite3.connect(self.dbase)
         conn.execute(SQLiteHandler.sql_create)
         conn.commit()
 
     def emit(self, record):
         sql = SQLiteHandler.sql_insert % record.__dict__
-        conn = sqlite3.connect(self.db)
+        conn = sqlite3.connect(self.dbase)
         conn.execute(sql)
         conn.commit()
 

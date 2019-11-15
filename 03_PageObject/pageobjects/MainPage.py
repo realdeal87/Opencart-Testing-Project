@@ -52,3 +52,20 @@ class MainPage(BasePage):
         product = {'link': product}
         self._click(product)
         return self
+
+    def login(self, email, password):
+        """Вход в аккаунт пользователя"""
+        self._click(Main.CustomerMenu.my_account)
+        self._click(Main.CustomerMenu.login)
+        self._input(Main.Login.email, email)
+        self._input(Main.Login.password, password)
+        self._click(Main.Login.login_button)
+        return self
+
+    def checkout_information(self):
+        self._click(Main.MyAccount.my_account)
+        firstname = self._get_value(Main.MyAccountInformation.firstname)
+        lastname = self._get_value(Main.MyAccountInformation.lastname)
+        email = self._get_value(Main.MyAccountInformation.email)
+        telephone = self._get_value(Main.MyAccountInformation.telephone)
+        return firstname, lastname, email, telephone
