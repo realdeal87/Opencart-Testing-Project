@@ -20,18 +20,34 @@ def mysql_connector(request):
 
     sql_delete = """DELETE FROM oc_customer WHERE firstname = "Tester" AND lastname = "Testerov";"""
 
-    conn = pymysql.connect(host="localhost", user="opencart_user",
-                           password="opencartpassopencart", db="opencart")
-    cursor = conn.cursor()
-    cursor.execute(sql_insert)
+    cursor = MySQLConnector(host="localhost", user="opencart_user",
+                            password="opencartpassopencart", db="opencart")
+    cursor.execute_statement(sql_insert)
 
     def fin():
         """Файнолайзер: удаление карточки покупателя, закрытие соединения"""
-        cursor.execute(sql_delete)
-        cursor.close()
+        cursor.execute_statement(sql_delete)
+        cursor.close_connection()
 
     request.addfinalizer(fin)
     return cursor
+
+
+class MySQLConnector:
+    """Подключение к базе данных MySQL"""
+
+    def __init__(self, host, user, password, db):
+        self.conn = pymysql.connect(host, user, password, db)
+        self.cursor = self.conn.cursor()
+
+    def execute_statement(self, statement):
+        """Выполнение запроса к базе данных"""
+        self.cursor.execute(statement)
+
+    def close_connection(self):
+        """Закрытие соединения с базой данных"""
+        self.conn.close()
+        self.cursor.close()
 
 
 def test_check_customer(driver, url, logging_test, mysql_connector):
@@ -41,4 +57,3 @@ def test_check_customer(driver, url, logging_test, mysql_connector):
         .login(email="test@test.com", password="test")
     parameters = MainPage(driver).checkout_information()
     assert parameters == ("Tester", "Testerov", "test@test.com", "777-77-77")
-
