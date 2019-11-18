@@ -16,22 +16,14 @@ class SSHConnector:
         self.channel.set_combine_stderr(True)
         self.channel.get_pty()
 
-    def sudo_command(self, command):
+    def command(self, command):
         """Метод для выполнения команды от имени суперпользователя"""
         self.channel.exec_command(command)
         stdin = self.channel.makefile('wb', -1)
         stdout = self.channel.makefile('rb', -1)
-        stdin.write(self.secret + "\n")
-        stdin.flush()
-        result = stdout.read().decode("utf-8")
-        self.channel.close()
-        self.client.close()
-        return result
-
-    def command(self, command):
-        """Метод для выполнения команды"""
-        self.channel.exec_command(command)
-        stdout = self.channel.makefile('rb', -1)
+        if command.startswith("sudo"):
+            stdin.write(self.secret + "\n")
+            stdin.flush()
         result = stdout.read().decode("utf-8")
         self.channel.close()
         self.client.close()
@@ -40,7 +32,7 @@ class SSHConnector:
 
 def test_opencart_works_after_restart():
     """Доступность OpenCart после перезагрузки сервера"""
-    SSHConnector(*PARAMS).sudo_command("sudo systemctl restart apache2")
+    SSHConnector(*PARAMS).command("sudo systemctl restart apache2")
     status_code = SSHConnector(*PARAMS).command("curl -o /dev/null -s -w"
                                                 "'%{http_code}\n' http://localhost/opencart/")
     assert int(status_code) == 200
@@ -48,13 +40,13 @@ def test_opencart_works_after_restart():
 
 def test_restart_apache2():
     """Доступность apache2 после перезагрузки"""
-    SSHConnector(*PARAMS).sudo_command("sudo systemctl restart apache2")
+    SSHConnector(*PARAMS).command("sudo systemctl restart apache2")
     status = SSHConnector(*PARAMS).command("systemctl | grep apache2")
     assert "running" in status
 
 
 def test_restart_mariadb():
     """Доступность mariadb после перезагрузки"""
-    SSHConnector(*PARAMS).sudo_command("sudo systemctl restart mariadb")
+    SSHConnector(*PARAMS).command("sudo systemctl restart mariadb")
     status = SSHConnector(*PARAMS).command("systemctl | grep mariadb")
     assert "running" in status
