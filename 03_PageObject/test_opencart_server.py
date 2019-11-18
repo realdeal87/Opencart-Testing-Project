@@ -1,4 +1,4 @@
-"""Модуль для проверки действий с удаленным сервиром OpenCart"""
+"""Модуль для проверки действий с удаленным сервером OpenCart"""
 import paramiko
 
 PARAMS = ("192.168.1.3", "realdeal87", "realdeal87")
@@ -17,36 +17,44 @@ class SSHConnector:
         self.channel.get_pty()
 
     def sudo_command(self, command):
+        """Метод для выполнения команды от имени суперпользователя"""
         self.channel.exec_command(command)
         stdin = self.channel.makefile('wb', -1)
         stdout = self.channel.makefile('rb', -1)
         stdin.write(self.secret + "\n")
         stdin.flush()
-        return stdout.read().decode("utf-8")
+        result = stdout.read().decode("utf-8")
+        self.channel.close()
+        self.client.close()
+        return result
 
     def command(self, command):
+        """Метод для выполнения команды"""
         self.channel.exec_command(command)
         stdout = self.channel.makefile('rb', -1)
-        return stdout.read().decode("utf-8")
+        result = stdout.read().decode("utf-8")
+        self.channel.close()
+        self.client.close()
+        return result
 
 
 def test_opencart_works_after_restart():
-    SSHConnector(*PARAMS).sudo_command("sudo systemctl stop apache2.service")
+    """Доступность OpenCart после перезагрузки сервера"""
+    SSHConnector(*PARAMS).sudo_command("sudo systemctl restart apache2")
     status_code = SSHConnector(*PARAMS).command("curl -o /dev/null -s -w"
                                                 "'%{http_code}\n' http://localhost/opencart/")
-    assert int(status_code) == 100
+    assert int(status_code) == 200
 
 
 def test_restart_apache2():
+    """Доступность apache2 после перезагрузки"""
     SSHConnector(*PARAMS).sudo_command("sudo systemctl restart apache2")
     status = SSHConnector(*PARAMS).command("systemctl | grep apache2")
     assert "running" in status
 
 
 def test_restart_mariadb():
+    """Доступность mariadb после перезагрузки"""
     SSHConnector(*PARAMS).sudo_command("sudo systemctl restart mariadb")
     status = SSHConnector(*PARAMS).command("systemctl | grep mariadb")
     assert "running" in status
-
-
-
