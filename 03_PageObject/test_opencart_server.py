@@ -17,7 +17,11 @@ class SSHConnector:
         self.channel.get_pty()
 
     def command(self, command):
+<<<<<<< HEAD
         """Метод для выполнения команды на удаленном хосте"""
+=======
+        """Метод для выполнения команды от имени суперпользователя"""
+>>>>>>> 1f1b97510a829e80b6dcc5f349ae0727e3f8a443
         self.channel.exec_command(command)
         stdin = self.channel.makefile('wb', -1)
         stdout = self.channel.makefile('rb', -1)
