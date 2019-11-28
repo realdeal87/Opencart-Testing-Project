@@ -58,21 +58,22 @@ def proxy():
 
 
 @pytest.fixture
-def driver(request, proxy):
+def driver(request):
     """Фикстура для запуска браузеров {Chrome, Firefox} в полноэкранном режиме"""
     browser = request.config.getoption("--browser")
     waiting = request.config.getoption("--waiting")
-    url = urllib.parse.urlparse(proxy[1].proxy).path
+    # url = urllib.parse.urlparse(proxy[1].proxy).path
 
     if browser == "Chrome":
         options = ChromeOptions()
-        options.add_argument('--proxy-server=%s' % url)
+        # options.add_argument('--proxy-server=%s' % url)
         options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
         # web = webdriver.Chrome(options=options)
         web = EventFiringWebDriver(webdriver.Chrome(options=options), MyListener())
     elif browser == "Firefox":
         options = FirefoxOptions()
-        options.add_argument('--proxy-server=%s' % url)
+        # options.add_argument('--proxy-server=%s' % url)
         options.add_argument("--headless")
         # web = webdriver.Firefox(options=options)
         web = EventFiringWebDriver(webdriver.Firefox(options=options), MyListener())
@@ -86,7 +87,7 @@ def driver(request, proxy):
         """Файнолайзер: запись логов браузера, прокси сервера, закрытие браузера"""
         if web.name == "chrome":
             browser_logging(web)
-        proxy_logging(proxy[1])
+        # proxy_logging(proxy[1])
         # Поскольку этой коммандой прокси сервер не останавливается
         # proxy[0].stop()
         # приходится убивать процесс вручную

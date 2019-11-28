@@ -1,0 +1,10 @@
+pytest==4.6.0
+requests==2.20.0
+ipython
+selenium
+pylint
+browsermob-proxy
+allure-pytest==2.7.0
+psutil
+pymysql
+paramiko
