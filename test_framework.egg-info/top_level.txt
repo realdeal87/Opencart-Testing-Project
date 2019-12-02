@@ -1,1 +1,7 @@
-
+01_basic_test
+02_search_elements
+02_search_elements/locators
+03_PageObject/locators
+03_PageObject/pageobjects
+03_PageObject/pageobjects/common
+04_statistics/
