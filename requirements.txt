@@ -8,3 +8,4 @@ allure-pytest==2.7.0
 psutil
 pymysql
 paramiko
+robotframework
