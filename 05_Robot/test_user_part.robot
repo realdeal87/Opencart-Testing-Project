@@ -7,7 +7,7 @@ Test Teardown  Close Web Browser
 
 *** Variables ***
 ${URL}  http://localhost/opencart/
-${BROWSER}  Chrome
+${BROWSER}  Firefox
 
 *** Test Cases ***
 Search product by text, add found product to wishlist by number

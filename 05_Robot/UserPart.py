@@ -20,11 +20,12 @@ class UserPart:
         """Кейворд для отрытия браузера и страницы Opencart"""
         if self.browser == "Chrome":
             options = ChromeOptions()
-            # options.add_argument("--headless")
+            options.add_argument("--headless")
+            options.add_argument("--no-sandbox")
             self.web = webdriver.Chrome(options=options)
         elif self.browser == "Firefox":
             options = FirefoxOptions()
-            # options.add_argument("--headless")
+            options.add_argument("--headless")
             self.web = webdriver.Firefox(options=options)
         else:
             raise Exception(f"{self.browser} is not supported!")
