@@ -2,14 +2,12 @@
 import datetime
 import logging
 import sqlite3
-import urllib.parse
 import allure
 import pytest
-import psutil
-from browsermobproxy import Server, Client
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions, FirefoxOptions
 from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
+from .MyProxy import MyServer, MyClient
 
 
 def pytest_addoption(parser):
@@ -49,9 +47,9 @@ def url(request):
 @pytest.fixture
 def proxy():
     """Фикстура для конфигурирования прокси-сервера"""
-    server = Server("03_PageObject/browsermob-proxy-2.1.4/bin/browsermob-proxy")
+    server = MyServer("03_PageObject/browsermob-proxy-2.1.4/bin/browsermob-proxy")
     server.start()
-    client = Client("localhost:8080")
+    client = MyClient("localhost:8080")
     # print(client.port)
     client.new_har()
     return server, client
@@ -62,18 +60,18 @@ def driver(request):
     """Фикстура для запуска браузеров {Chrome, Firefox} в полноэкранном режиме"""
     browser = request.config.getoption("--browser")
     waiting = request.config.getoption("--waiting")
-    # url = urllib.parse.urlparse(proxy[1].proxy).path
+    server, client = proxy
 
     if browser == "Chrome":
         options = ChromeOptions()
-        # options.add_argument('--proxy-server=%s' % url)
+        # options.add_argument('--proxy-server=%s' % client.proxy)
         options.add_argument("--headless")
         options.add_argument("--no-sandbox")
         # web = webdriver.Chrome(options=options)
         web = EventFiringWebDriver(webdriver.Chrome(options=options), MyListener())
     elif browser == "Firefox":
         options = FirefoxOptions()
-        # options.add_argument('--proxy-server=%s' % url)
+        # options.add_argument('--proxy-server=%s' % client.proxy)
         options.add_argument("--headless")
         # web = webdriver.Firefox(options=options)
         web = EventFiringWebDriver(webdriver.Firefox(options=options), MyListener())
@@ -87,19 +85,10 @@ def driver(request):
         """Файнолайзер: запись логов браузера, прокси сервера, закрытие браузера"""
         if web.name == "chrome":
             browser_logging(web)
-        # proxy_logging(proxy[1])
-        # Поскольку этой коммандой прокси сервер не останавливается
-        # proxy[0].stop()
-        # приходится убивать процесс вручную
-        for process in psutil.process_iter():
-            if "-Dapp.name=browsermob-proxy" in process.cmdline():
-                process.kill()
-        # Смотрим логи из базы данных
-        # conn = sqlite3.connect("log.db")
-        # cursor = conn.cursor()
-        # for row in cursor.execute("SELECT * FROM log;"):
-        #     print(row)
-        # conn.close()
+        client.logger()
+        client.close()
+        server.stop()
+        web.quit()
         web.quit()
 
     request.addfinalizer(fin)
@@ -184,13 +173,4 @@ def browser_logging(driver):
         for line in driver.get_log('browser'):
             message = str(line["timestamp"]) + " - " + str(line["source"]) + " - " +\
                 str(line["level"]) + " - " + str(line["message"] + "\n")
-            file.write(message)
-
-
-def proxy_logging(proxy):
-    """Запись лога прокси сервера"""
-    with open("03_PageObject/logs/opencart_testing_proxy.log", "a") as file:
-        params = proxy.har["log"]
-        for key in params:
-            message = str(key) + "->" + str(params[key]) + "\n"
             file.write(message)
