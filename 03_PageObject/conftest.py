@@ -7,7 +7,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions, FirefoxOptions
 from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
-from .MyProxy import MyServer, MyClient
+from MyProxy import MyServer, MyClient
 
 
 def pytest_addoption(parser):
@@ -49,14 +49,14 @@ def proxy():
     """Фикстура для конфигурирования прокси-сервера"""
     server = MyServer("03_PageObject/browsermob-proxy-2.1.4/bin/browsermob-proxy")
     server.start()
-    client = MyClient("localhost:8080")
+    client = MyClient("localhost:8081")
     # print(client.port)
     client.new_har()
     return server, client
 
 
 @pytest.fixture
-def driver(request):
+def driver(request, proxy):
     """Фикстура для запуска браузеров {Chrome, Firefox} в полноэкранном режиме"""
     browser = request.config.getoption("--browser")
     waiting = request.config.getoption("--waiting")
@@ -88,7 +88,6 @@ def driver(request):
         client.logger()
         client.close()
         server.stop()
-        web.quit()
         web.quit()
 
     request.addfinalizer(fin)
