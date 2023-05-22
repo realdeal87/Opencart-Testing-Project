@@ -10,7 +10,7 @@ setup(name="test-framework",
                 "03_PageObject/locators", "03_PageObject/pageobjects",
                 "03_PageObject/pageobjects/common", "04_statistics/"],
       long_description=open('README.md').read(),
-      setup_requires=["pytest==4.6.0", "requests==2.20.0", "ipython", "selenium",
+      setup_requires=["pytest==4.6.0", "requests==2.31.0", "ipython", "selenium",
                       "pylint", "browsermob-proxy", "allure-pytest==2.7.0",
                       "psutil", "pymysql", "paramiko"],
       zip_safe=False)
